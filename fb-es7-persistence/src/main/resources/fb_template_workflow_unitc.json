@@ -1,0 +1,11 @@
+{
+  "order": 1,
+  "index_patterns": [
+    "conductor_unitb_workflow_*"
+  ],
+  "settings": {},
+  "mappings": {},
+  "aliases": {
+    "conductor_unitb_workflow": {}
+  }
+}

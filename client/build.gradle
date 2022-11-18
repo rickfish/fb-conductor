@@ -1,0 +1,51 @@
+apply plugin: 'findbugs'
+apply plugin: 'pmd'
+
+dependencies {
+	configurations.all {
+		exclude group: 'amazon', module: 'aws-java-sdk'
+		exclude group: 'com.thoughtworks.xstream', module: 'xstream'
+		exclude group: 'io.netty', module: 'netty-resolver-dns'
+		exclude group: 'com.squareup.okhttp', module: 'okhttp'
+		resolutionStrategy {
+	       	force 'net.java.dev.jna:jna:+'
+			force 'commons-beanutils:commons-beanutils:+'
+			force 'commons-collections:commons-collections:+'
+			force 'io.netty:netty-common:4.1.48.Final'
+			force 'io.netty:netty-transport:4.1.48.Final'
+			force 'io.netty:netty-codec:4.1.48.Final'
+			force 'io.netty:netty-codec-http:4.1.53.Final'
+			force 'io.netty:netty-codec-http2:4.1.48.Final'
+			force 'xerces:xercesImpl:2.12.0'
+			force 'org.apache.httpcomponents:httpclient-cache:+'
+			force 'net.java.dev.jna:jna-platform:+'
+			force 'com.amazonaws:aws-java-sdk-sqs:+'
+			force "org.apache.thrift:libthrift:+"
+			force "net.minidev:json-smart:+"
+			force "org.apache.logging.log4j:log4j-api:2.17.0"
+    		force "org.apache.logging.log4j:log4j-core:2.17.0"
+		}
+	}                                                                                       
+
+    compile project(':conductor-common')
+
+    compile "com.sun.jersey:jersey-client:${revJerseyClient}"
+    compile "com.netflix.spectator:spectator-api:${revSpectator}"
+    compile "com.netflix.eureka:eureka-client:${revEurekaClient}"
+    compile "com.fasterxml.jackson.datatype:jackson-datatype-jsr310:${revJacksonCore}"
+    compile "com.fasterxml.jackson.jaxrs:jackson-jaxrs-json-provider:${revJaxrsJackson}"
+    compile "com.netflix.archaius:archaius-core:${revArchaius}"
+    compile "com.amazonaws:aws-java-sdk-core:${revAwsSdk}"
+    compile "commons-io:commons-io:${revApacheCommons}"
+
+    testCompile "org.slf4j:slf4j-log4j12:${revSlf4jlog4j}"
+    testCompile "org.powermock:powermock-module-junit4:${revPowerMock}"
+    testCompile "org.powermock:powermock-api-mockito2:${revPowerMock}"
+}
+
+tasks.withType(FindBugs) {
+    reports {
+        xml.enabled false
+        html.enabled true
+    }
+}

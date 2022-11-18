@@ -1,0 +1,49 @@
+dependencies {
+	configurations.all {
+		exclude group: 'amazon', module: 'aws-java-sdk'
+		exclude group: 'com.thoughtworks.xstream', module: 'xstream'
+		exclude group: 'io.netty', module: 'netty-resolver-dns'
+		exclude group: 'com.squareup.okhttp', module: 'okhttp'
+		resolutionStrategy {
+	       	force 'net.java.dev.jna:jna:+'
+			force 'commons-beanutils:commons-beanutils:+'
+			force 'commons-collections:commons-collections:+'
+			force 'io.netty:netty-common:4.1.48.Final'
+			force 'io.netty:netty-transport:4.1.48.Final'
+			force 'io.netty:netty-codec:4.1.48.Final'
+			force 'io.netty:netty-codec-http:4.1.53.Final'
+			force 'io.netty:netty-codec-http2:4.1.48.Final'
+			force 'xerces:xercesImpl:2.12.0'
+			force 'org.apache.httpcomponents:httpclient-cache:+'
+			force 'net.java.dev.jna:jna-platform:+'
+			force 'com.amazonaws:aws-java-sdk-sqs:+'
+			force "org.apache.thrift:libthrift:+"
+			force "net.minidev:json-smart:+"
+			force "org.apache.logging.log4j:log4j-api:2.17.0"
+    		force "org.apache.logging.log4j:log4j-core:2.17.0"
+		}
+	}                                                                                       
+
+    compile project(':conductor-common')
+    compile project(':conductor-fb-core')
+
+    compile "io.reactivex:rxjava:${revRxJava}"
+    compile "com.google.inject:guice:${revGuice}"
+    compile "com.google.inject.extensions:guice-multibindings:${revGuiceMultiBindings}"
+
+    compile "com.netflix.servo:servo-core:${revServo}"
+    compile "com.netflix.spectator:spectator-api:${revSpectator}"
+    compile "com.fasterxml.jackson.core:jackson-databind:${revJacksonDatabind}"
+    compile "com.fasterxml.jackson.core:jackson-core:${revJacksonCore}"
+    compile "com.jayway.jsonpath:json-path:${revJsonPath}"
+    compile "org.apache.commons:commons-lang3:${revCommonsLang3}"
+    compile "com.spotify:completable-futures:${revSpotifyCompletableFutures}"
+    compile "com.amazonaws:aws-java-sdk-s3:${revAwsSdk}"
+    compile "org.apache.bval:bval-jsr:${revBval}"
+    compile "javax.validation:validation-api:${revValidationApi}"
+    // https://mvnrepository.com/artifact/org.glassfish/javax.el
+    compile group: 'org.glassfish', name: 'javax.el', version: "${revJavaElApi}"
+	compile "com.sun.mail:javax.mail:${revJavaMail}"
+	    
+    testCompile "org.slf4j:slf4j-log4j12:${revSlf4jlog4j}"
+}

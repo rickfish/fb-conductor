@@ -1,0 +1,51 @@
+plugins {
+    // FIXME This is temporary until the server module refactoring is completed.
+    id 'com.github.johnrengelman.shadow' version '1.2.3'
+    id "eclipse"
+}
+
+import org.gradle.plugins.ide.eclipse.model.Library
+eclipse.classpath.file {
+      whenMerged { 
+        entries += new Library(fileReference(file('../grpc/build/classes/java/main')))
+      }
+}
+
+dependencies {
+	configurations.all {
+		exclude group: 'amazon', module: 'aws-java-sdk'
+		exclude group: 'com.thoughtworks.xstream', module: 'xstream'
+		exclude group: 'io.netty', module: 'netty-resolver-dns'
+		exclude group: 'com.squareup.okhttp', module: 'okhttp'
+		resolutionStrategy {
+	       	force 'net.java.dev.jna:jna:+'
+			force 'commons-beanutils:commons-beanutils:+'
+			force 'commons-collections:commons-collections:+'
+			force 'io.netty:netty-common:4.1.48.Final'
+			force 'io.netty:netty-transport:4.1.48.Final'
+			force 'io.netty:netty-codec:4.1.48.Final'
+			force 'io.netty:netty-codec-http:4.1.53.Final'
+			force 'io.netty:netty-codec-http2:4.1.48.Final'
+			force 'xerces:xercesImpl:2.12.0'
+			force 'org.apache.httpcomponents:httpclient-cache:+'
+			force 'net.java.dev.jna:jna-platform:+'
+			force 'com.amazonaws:aws-java-sdk-sqs:+'
+			force "org.apache.thrift:libthrift:+"
+			force "net.minidev:json-smart:+"
+			force "org.apache.logging.log4j:log4j-api:2.17.0"
+    		force "org.apache.logging.log4j:log4j-core:2.17.0"
+   	        force "com.google.protobuf:protobuf-java:3.13.0"
+		}
+	}                                                                                       
+    compile project(':conductor-common')
+    compile project(':conductor-core')
+    compile project(':conductor-grpc')
+
+    compile "io.grpc:grpc-netty:${revGrpc}"
+    compile "io.grpc:grpc-services:${revGrpc}"
+    compile "log4j:log4j:1.2.17"
+
+    testCompile "io.grpc:grpc-testing:${revGrpc}"
+    testCompile "org.testinfected.hamcrest-matchers:all-matchers:${revHamcrestAllMatchers}"
+    testCompile "org.slf4j:slf4j-log4j12:${revSlf4jlog4j}"
+}

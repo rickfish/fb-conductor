@@ -1,0 +1,81 @@
+buildscript {
+
+    repositories {
+		maven {
+			url 'http://artifactory.bcbsfl.com/artifactory/libs-release'
+		}
+	
+		maven {
+			 url 'http://artifactory.bcbsfl.com/artifactory/maven-libs/'
+		}
+
+		maven {
+			url 'http://artifactory.bcbsfl.com/artifactory/gradle-test-libs-release'
+		}
+    }
+}
+
+dependencies {
+	configurations.all {
+		exclude group: 'amazon', module: 'aws-java-sdk'
+		exclude group: 'com.thoughtworks.xstream', module: 'xstream'
+		exclude group: 'io.netty', module: 'netty-resolver-dns'
+		exclude group: 'com.squareup.okhttp', module: 'okhttp'
+		resolutionStrategy {
+	       	force 'net.java.dev.jna:jna:+'
+			force 'commons-beanutils:commons-beanutils:+'
+			force 'commons-collections:commons-collections:+'
+			force 'io.netty:netty-common:4.1.48.Final'
+			force 'io.netty:netty-transport:4.1.48.Final'
+			force 'io.netty:netty-codec:4.1.48.Final'
+			force 'io.netty:netty-codec-http:4.1.53.Final'
+			force 'io.netty:netty-codec-http2:4.1.48.Final'
+			force 'xerces:xercesImpl:2.12.0'
+			force 'org.apache.httpcomponents:httpclient-cache:+'
+			force 'net.java.dev.jna:jna-platform:+'
+			force 'com.amazonaws:aws-java-sdk-sqs:+'
+			force "org.apache.thrift:libthrift:+"
+			force "net.minidev:json-smart:+"
+			force "org.apache.logging.log4j:log4j-api:2.17.0"
+    		force "org.apache.logging.log4j:log4j-core:2.17.0"
+		}
+	}                                                                                       
+    testCompile project(':conductor-core')
+    testCompile project(':conductor-jersey')
+    testCompile project(':conductor-redis-persistence').sourceSets.test.output
+    testCompile project(':conductor-mysql-persistence').sourceSets.test.output
+    testCompile project(':conductor-postgres-persistence').sourceSets.test.output
+    testCompile project(':conductor-client')
+    testCompile project(':conductor-server')
+    testCompile project(':conductor-grpc-client')
+    testCompile project(':conductor-grpc-server')
+    testCompile "org.elasticsearch:elasticsearch:${revElasticSearch6}"
+    testCompile "org.eclipse.jetty:jetty-server:${revJetteyServer}"
+    testCompile "org.eclipse.jetty:jetty-servlet:${revJettyServlet}"
+    testCompile "org.rarefiedredis.redis:redis-java:${revRarefiedRedis}"
+    testCompile "com.sun.jersey.contribs:jersey-guice:${revJerseyGuice}"
+
+    testCompile "com.google.inject.extensions:guice-servlet:${revGuiceServlet}"
+    testCompile "io.swagger:swagger-jersey-jaxrs:${revSwaggerJersey}"
+    testCompile "org.awaitility:awaitility:${revAwaitility}"
+
+    testCompile "org.codehaus.groovy:groovy-all:${revGroovy}"
+    testCompile "org.spockframework:spock-core:${revSpock}"
+    testCompile "org.spockframework:spock-guice:${revSpock}"
+    testCompile 'com.netflix.governator:governator-test-spock:latest.release'
+    testCompile "org.elasticsearch:elasticsearch:${revElasticSearch5}"
+    testCompile "org.elasticsearch.client:transport:${revElasticSearch5}"
+    testCompile "org.elasticsearch.client:elasticsearch-rest-client:${revElasticSearch5}"
+    testCompile "org.elasticsearch.client:elasticsearch-rest-high-level-client:${revElasticSearch5}"
+}
+
+test {
+    testLogging {
+        exceptionFormat = 'full'
+    }
+}
+
+task server(type: JavaExec) {
+    main = 'com.netflix.conductor.demo.Main'
+    classpath = sourceSets.test.runtimeClasspath
+}

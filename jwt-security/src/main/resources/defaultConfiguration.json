@@ -1,0 +1,47 @@
+{
+	"env":"local",
+	"enabled": true,
+	"unAuthRedirect": null,
+	"defaultSecured": true,
+	"jwtCertificatesPath":"/Users/e3r4/certs/",
+	"uris": [
+		{
+			"uri": "\\/admin\\/?",
+			"secured": true,
+			"roles": "ALL"
+		},
+		{
+			"uri": "\\/public\\/?",
+			"secured": false,
+			"roles": "ALL"
+		},
+		{
+			"uri": "\\/documentation\\/?",
+			"secured": false,
+			"roles": "ALL"
+		},
+		{
+			"uri": "\\/openapi.json$",
+			"secured": false,
+			"roles": "ALL"
+		},
+		{
+			"uri": "\\/readiness$",
+			"secured": false,
+			"roles": "ALL"
+		},
+		{
+			"uri": "\\/liveness$",
+			"secured": false,
+			"roles": "ALL"
+		},
+		{
+			"uri": "\\/health$",
+			"secured": false,
+			"roles": "ALL"
+		}
+	],
+	"expirationClockSkew": 0,
+	"logLevel":"Error",
+	"logSysOut":true
+}

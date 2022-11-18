@@ -1,0 +1,139 @@
+{
+	"enabled": true,
+	"superGroups": ["ETD"],
+	"endpoints": [
+		{
+			"endpoint": "admin\\/config$",
+			"method": ["GET"],
+			"protection": "SUPERGROUPS"
+		},
+		{
+			"endpoint": "tasks\\/queue\\/requeue+$",
+			"method": ["POST"],
+			"protection": "SUPERGROUPS"
+		},
+		{
+			"endpoint": "metadata\\/[^\\/]",
+			"method": ["DELETE"],
+			"protection": "SUPERGROUPS"
+		},
+		{
+			"endpoint": "metadata\\/taskdefs",
+			"method": ["POST","PUT"],
+			"protection": "SUPERGROUPS"
+		},
+		{
+			"endpoint": "metadata\\/workflow",
+			"method": ["POST"],
+			"protection": "SUPERGROUPS",
+			"secRoleLocation": "INPUT_OF_ALL_TASKS"
+		},
+		{
+			"endpoint": "metadata\\/workflow",
+			"method": ["PUT"],
+			"protection": "SUPERGROUPS",
+			"secRoleLocation": "INPUT_OF_ALL_WORKFLOWS_TASKS"
+		},
+		{
+			"endpoint": "workflow\\/bulk\\/(restart|retry|resume|pause|terminate)",
+			"method": ["PUT","POST","DELETE"],
+			"protection": "AUTHORIZED",
+			"resourceType": "WORKFLOW",
+			"resourceNameLoc": {
+				"location": "ARRAY_OF_IDS"
+			}
+		},
+		{
+			"endpoint": "workflow\\/[^\\/]",
+			"method": ["DELETE"],
+			"protection": "AUTHORIZED",
+			"resourceType": "WORKFLOW",
+			"resourceNameLoc": {
+				"location": "ID_LOOKUP",
+				"pathSegment": 2
+			}
+		},
+		{
+			"endpoint": "\\bworkflow\\b$",
+			"method": ["POST"],
+			"protection": "AUTHORIZED",
+			"secRoleLocation": "REQUEST_BODY_INPUT",
+			"resourceType": "WORKFLOW",
+			"resourceNameLoc": {
+				"location": "BODY",
+				"attributeName": "name"
+			}
+		},
+		{
+			"endpoint": "workflow\\/[^\\/]+$",
+			"method": ["POST"],
+			"protection": "AUTHORIZED",
+			"secRoleLocation": "REQUEST_BODY",
+			"resourceType": "WORKFLOW",
+			"resourceNameLoc": {
+				"location": "PATH",
+				"pathSegment": 2
+			}
+		},
+		{
+			"endpoint": "workflow\\/.*\\/(rerun|resetcallbacks|restart|retry|resume|skiptask)",
+			"method": ["PUT","POST"],
+			"protection": "AUTHORIZED",
+			"resourceType": "WORKFLOW",
+			"resourceNameLoc": {
+				"location": "ID_LOOKUP",
+				"pathSegment": 2
+			}
+		},
+		{
+			"endpoint": "workflow\\/decide\\/[^\\/]+$",
+			"method": ["PUT"],
+			"protection": "AUTHORIZED",
+			"resourceType": "WORKFLOW",
+			"resourceNameLoc": {
+				"location": "ID_LOOKUP",
+				"pathSegment": 3
+			}
+		},
+		{
+			"endpoint": "\\btasks\\b$",
+			"method": ["POST"],
+			"protection": "AUTHORIZED",
+			"resourceType": "WORKFLOWTASK",
+			"resourceNameLoc": {
+				"location": "ID_LOOKUP",
+				"attributeName": "taskId"
+			}
+		},
+		{
+			"endpoint": "tasks\\/queue\\/[^\\/]",
+			"method": ["DELETE"],
+			"protection": "AUTHORIZED",
+			"resourceType": "WORKFLOWTASK",
+			"resourceNameLoc": {
+				"location": "ID_LOOKUP",
+				"pathSegment": 4
+			}
+		},
+		{
+			"endpoint": "tasks\\/queue\\/requeue\\/[^\\/]",
+			"method": ["POST"],
+			"protection": "AUTHORIZED",
+			"resourceType": "TASK",
+			"resourceNameLoc": {
+				"location": "PATH",
+				"pathSegment": 4
+			}
+		},
+		{
+			"endpoint": "tasks\\/.*\\/(ack|log)$",
+			"method": ["POST"],
+			"protection": "AUTHORIZED",
+			"resourceType": "WORKFLOWTASK",
+			"resourceNameLoc": {
+				"location": "ID_LOOKUP",
+				"pathSegment": 2
+			}
+		}
+	]
+}

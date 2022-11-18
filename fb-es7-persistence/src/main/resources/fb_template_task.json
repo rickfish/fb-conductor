@@ -1,0 +1,91 @@
+{
+  "order" : 0,
+  "index_patterns" : [
+    "conductor_*_task_*"
+  ],
+  "settings" : {
+    "index" : {
+      "refresh_interval" : "1s",
+      "unassigned" : {
+        "node_left" : {
+          "delayed_timeout" : "5m"
+        }
+      },
+      "number_of_shards" : "1",
+      "number_of_replicas" : "1"
+    }
+  },
+  "mappings" : {
+    "properties" : {
+      "scheduledTime" : {
+        "format" : "strict_date_optional_time||epoch_millis",
+        "type" : "date"
+      },
+      "updateTime" : {
+        "format" : "strict_date_optional_time||epoch_millis",
+        "type" : "date"
+      },
+      "tags" : {
+        "type" : "object"
+      },
+      "executionTime" : {
+        "type" : "long"
+      },
+      "output" : {
+        "type" : "object",
+        "enabled" : false
+      },
+      "input" : {
+        "type" : "object",
+        "enabled" : false
+      },
+      "taskType" : {
+        "index" : true,
+        "type" : "keyword"
+      },
+      "reasonForIncompletion" : {
+        "index" : true,
+        "type" : "keyword"
+      },
+      "queueWaitTime" : {
+        "type" : "long"
+      },
+      "taskDefName" : {
+        "index" : true,
+        "type" : "keyword"
+      },
+      "correlationId" : {
+        "index" : true,
+        "type" : "keyword"
+      },
+      "startTime" : {
+        "format" : "strict_date_optional_time||epoch_millis",
+        "type" : "date"
+      },
+      "workflowType" : {
+        "index" : true,
+        "type" : "keyword"
+      },
+      "endTime" : {
+        "format" : "strict_date_optional_time||epoch_millis",
+        "type" : "date"
+      },
+      "taskId" : {
+        "index" : true,
+        "type" : "keyword"
+      },
+      "workflowId" : {
+        "index" : true,
+        "type" : "keyword"
+      },
+      "status" : {
+        "index" : true,
+        "type" : "keyword"
+      }
+    }
+  },
+  "aliases" : {
+    "task-datasets" : { },
+    "TASK": {}
+  }
+}

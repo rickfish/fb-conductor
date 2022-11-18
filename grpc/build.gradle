@@ -1,0 +1,93 @@
+buildscript {
+    dependencies {
+        classpath 'com.google.protobuf:protobuf-gradle-plugin:0.8.5'
+    }
+}
+
+plugins {
+    id 'java'
+    id 'idea'
+    id "com.google.protobuf" version "0.8.5"
+    id "eclipse"
+}
+
+repositories{
+    maven { url 'http://artifactory.bcbsfl.com/artifactory/libs-release' }
+	maven { url 'http://artifactory.bcbsfl.com/artifactory/maven-libs/' }
+    maven {	url 'http://artifactory.bcbsfl.com/artifactory/gradle-test-libs-release' }
+    maven {	url 'http://artifactory.bcbsfl.com/artifactory/conductor-chaossys-mvn' 
+		credentials {
+			username = "${artifactory_user}"
+			password = "${artifactory_password}"
+		}
+	}
+}
+
+dependencies {
+	configurations.all {
+		exclude group: 'amazon', module: 'aws-java-sdk'
+		exclude group: 'com.thoughtworks.xstream', module: 'xstream'
+		exclude group: 'io.netty', module: 'netty-resolver-dns'
+		exclude group: 'com.squareup.okhttp', module: 'okhttp'
+		resolutionStrategy {
+	       	force 'net.java.dev.jna:jna:+'
+			force 'commons-beanutils:commons-beanutils:+'
+			force 'commons-collections:commons-collections:+'
+			force 'io.netty:netty-common:4.1.48.Final'
+			force 'io.netty:netty-transport:4.1.48.Final'
+			force 'io.netty:netty-codec:4.1.48.Final'
+			force 'io.netty:netty-codec-http:4.1.53.Final'
+			force 'io.netty:netty-codec-http2:4.1.48.Final'
+			force 'xerces:xercesImpl:2.12.0'
+			force 'org.apache.httpcomponents:httpclient-cache:+'
+			force 'net.java.dev.jna:jna-platform:+'
+			force 'com.amazonaws:aws-java-sdk-sqs:+'
+			force "org.apache.thrift:libthrift:+"
+			force "net.minidev:json-smart:+"
+			force "org.apache.logging.log4j:log4j-api:2.17.0"
+    		force "org.apache.logging.log4j:log4j-core:2.17.0"
+   	        force "com.google.protobuf:protobuf-java:3.13.0"
+		}
+	}                                                                                       
+    compile project(':conductor-common')
+    compile project(':conductor-core')
+
+    protobuf 'io.chaossystems.grpc:grpc-healthcheck:1.0.+:protos'
+    compile "com.google.api.grpc:proto-google-common-protos:1.0.0"
+    compile "io.grpc:grpc-protobuf:${revGrpc}"
+    compile "io.grpc:grpc-stub:${revGrpc}"
+
+    compile "com.netflix.runtime:health-api:${revHealth}"
+}
+
+import org.gradle.plugins.ide.eclipse.model.Library
+eclipse.classpath.file {
+      whenMerged { 
+        entries += new Library(fileReference(file('build/classes/java/main')))
+      }
+}
+
+protobuf {
+    protoc {
+        artifact = "com.google.protobuf:protoc:${revProtoBuf}"
+    }
+    plugins {
+        grpc {
+            artifact = "io.grpc:protoc-gen-grpc-java:${revGrpc}"
+        }
+    }
+    generateProtoTasks {
+        processResources.dependsOn extractProto
+        all()*.plugins {
+            grpc {}
+        }
+    }
+}
+
+idea {
+    module {
+        sourceDirs += file("${projectDir}/build/generated/source/proto/main/java");
+        sourceDirs += file("${projectDir}/build/generated/source/proto/main/grpc");
+    }
+}
+

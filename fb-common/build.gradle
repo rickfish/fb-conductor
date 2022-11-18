@@ -1,0 +1,58 @@
+dependencies {
+	configurations.all {
+		exclude group: 'amazon', module: 'aws-java-sdk'
+		exclude group: 'com.thoughtworks.xstream', module: 'xstream'
+		exclude group: 'io.netty', module: 'netty-resolver-dns'
+		exclude group: 'com.squareup.okhttp', module: 'okhttp'
+		resolutionStrategy {
+	       	force 'net.java.dev.jna:jna:+'
+			force 'commons-beanutils:commons-beanutils:+'
+			force 'commons-collections:commons-collections:+'
+			force 'io.netty:netty-common:4.1.48.Final'
+			force 'io.netty:netty-transport:4.1.48.Final'
+			force 'io.netty:netty-codec:4.1.48.Final'
+			force 'io.netty:netty-codec-http:4.1.53.Final'
+			force 'io.netty:netty-codec-http2:4.1.48.Final'
+			force 'xerces:xercesImpl:2.12.0'
+			force 'org.apache.httpcomponents:httpclient-cache:+'
+			force 'net.java.dev.jna:jna-platform:+'
+			force 'com.amazonaws:aws-java-sdk-sqs:+'
+			force "org.apache.thrift:libthrift:+"
+			force "net.minidev:json-smart:+"
+			force "org.apache.logging.log4j:log4j-api:2.17.0"
+    		force "org.apache.logging.log4j:log4j-core:2.17.0"
+			force "com.fasterxml.jackson.core:jackson-databind:2.13.1"
+		}
+	}                                                                                       
+
+	compile group: 'com.google.inject', name: 'guice', version: '4.1.0'
+	compile group: 'com.google.inject.extensions', name: 'guice-servlet', version: '4.1.0'
+	
+	compile "org.apache.logging.log4j:log4j-api:${revLog4jApi}"
+	compile "org.apache.commons:commons-lang3:${revCommonsLang3}"
+    compile project(':conductor-common')
+    compile project(':conductor-contribs')
+    compile project(':conductor-fb-core')
+	compile "redis.clients:jedis:${revJedis}"
+    compile "com.netflix.spectator:spectator-api:${revSpectator}"
+    compile "org.apache.kafka:kafka-clients:${revKafkaClient}"  
+	compile "com.sun.mail:javax.mail:${revJavaMail}"
+
+    compile('com.fasterxml.jackson.dataformat:jackson-dataformat-xml:2.8.9')  
+    compile('com.fasterxml.jackson.core:jackson-databind:2.8.9')  
+    compile('com.google.code.gson:gson:1.7.2')
+     //purnima
+    compile('com.netflix.spectator:spectator-reg-metrics3:0.85.0')
+    //purnima
+    compile "javax.ws.rs:jsr311-api:${revJsr311Api}"
+    //purnima
+    compile "io.swagger:swagger-jaxrs:${revSwagger}"
+    compileOnly "javax.servlet:javax.servlet-api:${revServletApi}"
+
+    compile "io.prometheus:simpleclient:0.6.0"
+    compile "io.prometheus:simpleclient_servlet:0.6.0"
+    runtime group: 'com.netflix.conductor', name: 'conductor-contribs', version: '2.13.5'
+    compile group: 'com.netflix.spectator', name: 'spectator-ext-jvm', version: '0.92.1'
+    compile group: 'com.netflix.spectator', name: 'spectator-ext-gc', version: '0.92.1'
+}
+	

@@ -1,0 +1,123 @@
+{
+	"workflowId": "996aa91a-ffe6-4945-87bf-b8c7d238fac2",
+	"workflowType": "claims_workflow_task_creation_workflow_1.0",
+	"scheduledTime": "2019-10-27T00:37:09.052Z",
+	"startTime": "2019-10-27T00:37:16.699Z",
+	"updateTime": "2019-10-27T00:37:16.699Z",
+	"endTime": "2019-10-27T00:37:35.733Z",
+	"status": "COMPLETED",
+	"executionTime": 19034,
+	"queueWaitTime": 7647,
+	"taskDefName": "claims_workflow_search_medical_records_task_1.0",
+	"taskType": "claims_workflow_search_medical_records_task_1.0",
+	"input": {
+		"claim": {
+			"claimNumber": "H100000767850666",
+			"taskType": "HC",
+			"holdCode": "HPINV",
+			"lineOfBusiness": "HST",
+			"spMemberId": "815152208",
+			"groupNumber": "70427FAA",
+			"providerNumber": "345",
+			"claimType": "I",
+			"hasAttachments": false,
+			"claimAge": 0,
+			"sequenceClaimId": 1298443756,
+			"claimReceivedDate": "10/26/2019",
+			"isEligibleForAutomation": false,
+			"claimServiceDate": "05/26/2019",
+			"claimThruDate": "05/29/2019",
+			"memberId": "815152208",
+			"hasBeenReviewed": false,
+			"patientLastName": "APONTEDESARDEN",
+			"patientFirstName": "EZRA",
+			"patientDateOfBirth": "05/26/2019",
+			"holdCodeList": {
+				"reasonCode": "HPINV",
+				"lineNumber": 12,
+				"history": " ",
+				"contestedInd": "N"
+			},
+			"hasHPINV": false,
+			"claimIndicator": "E",
+			"groupId": "BCHOST",
+			"providerParStatus": "P",
+			"alphaPrefix": "RGN",
+			"spIndicator": "BC2",
+			"totalBilledAmount": 13894
+		},
+		"secRole": "BCH"
+	},
+	"output": {
+		"medical-records:request": {
+			"medicalRecordSearchHeader": {
+				"transactionId": "f8c35b2e-3c96-4678-874b-eb4af524988a",
+				"clientId": "claims-workflow",
+				"tranDateTimeStamp": "10/26/2019 20:37:35",
+				"source": "EIP",
+				"thresholdCount": 50
+			},
+			"providerId": "345",
+			"serviceFromDate": "02/26/2019",
+			"serviceToDate": "12/31/2999",
+			"patientLastName": "APONTEDESARDEN",
+			"patientFirstName": "EZRA",
+			"patientDateOfBirth": "05/26/2019"
+		},
+		"medical-records:response": {
+			"medicalRecordSearchHeader": {
+				"transactionId": "f8c35b2e-3c96-4678-874b-eb4af524988a",
+				"clientId": "claims-workflow",
+				"tranDateTimeStamp": "10/26/2019 20:37:35",
+				"source": "EIP",
+				"thresholdCount": 50
+			},
+			"recordCount": 0
+		},
+		"claim": {
+			"claimNumber": "H100000767850666",
+			"taskType": "HC",
+			"holdCode": "HPINV",
+			"lineOfBusiness": "HST",
+			"spMemberId": "815152208",
+			"groupNumber": "70427FAA",
+			"providerNumber": "345",
+			"claimType": "I",
+			"hasAttachments": false,
+			"claimAge": 0,
+			"sequenceClaimId": 1298443756,
+			"claimReceivedDate": "10/26/2019",
+			"isEligibleForAutomation": true,
+			"claimServiceDate": "05/26/2019",
+			"claimThruDate": "05/29/2019",
+			"memberId": "815152208",
+			"hasBeenReviewed": false,
+			"patientLastName": "APONTEDESARDEN",
+			"patientFirstName": "EZRA",
+			"patientDateOfBirth": "05/26/2019",
+			"holdCodeList": {
+				"reasonCode": "HPINV",
+				"lineNumber": 12,
+				"history": " ",
+				"contestedInd": "N"
+			},
+			"hasHPINV": false,
+			"claimIndicator": "E",
+			"groupId": "BCHOST",
+			"providerParStatus": "P",
+			"alphaPrefix": "RGN",
+			"spIndicator": "BC2",
+			"totalBilledAmount": 13894
+		}
+	},
+	"taskId": "3f947cc9-edac-4923-8aa7-177cef2a5126",
+	"workflowPriority": 0,
+	"tags": {
+		"claimNumber": "H100000767850666",
+		"claimType": "I",
+		"sequenceClaimId": "1298443756",
+		"memberId": "815152208",
+		"secRole": "BCH",
+		"providerId": "345"
+	}
+}

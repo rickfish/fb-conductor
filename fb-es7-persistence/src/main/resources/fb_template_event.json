@@ -1,0 +1,60 @@
+{
+  "order": 0,
+  "index_patterns": [
+    "conductor_*_event*"
+  ],
+  "settings": {
+    "index": {
+      "refresh_interval": "1s",
+      "unassigned": {
+        "node_left": {
+          "delayed_timeout": "5m"
+        }
+      },
+      "number_of_shards": "1",
+      "number_of_replicas": "1"
+    }
+  },
+  "mappings": {
+    "properties": {
+      "output": {
+        "properties": {
+          "workflowId": {
+            "index": true,
+            "type": "keyword"
+          }
+        }
+      },
+      "created": {
+        "type": "long"
+      },
+      "name": {
+        "index": true,
+        "type": "keyword"
+      },
+      "action": {
+        "index": true,
+        "type": "keyword"
+      },
+      "messageId": {
+        "index": true,
+        "type": "keyword"
+      },
+      "id": {
+        "index": true,
+        "type": "keyword"
+      },
+      "event": {
+        "index": true,
+        "type": "keyword"
+      },
+      "status": {
+        "index": true,
+        "type": "keyword"
+      }
+    }
+  },
+  "aliases": {
+    "EVENTS": {}
+  }
+}

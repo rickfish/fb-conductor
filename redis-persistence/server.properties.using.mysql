@@ -1,0 +1,45 @@
+# APPLICATION AND ENVIRONMENT METADATA
+PROJECT_NAME=netflix-conductor-unit
+OCP_IMAGE_PROJECT_NAME=ocp-image
+APPLICATION_NAME=conductor-server
+SERVICE_NAME=conductor-server
+ROUTE_NAME=conductor-server
+ENV=unit
+CUSTOM_DNS=conductorapis-unita.bcbsfl.com
+
+#TAG=latest
+TZ=America/New_York
+
+
+#db=memory
+db=mysql
+
+jdbc_url=jdbc:mysql://mqlbcds102.bcbsfl.com:4180/<database_name>?useSSL=false&serverTimezone=EST
+jdbc_username=<username>
+#jdbc_password=<password>
+jdbc_maxPoolSize=100
+jdbc_minIdleSize=20
+jdbc_idleTimeout=300000
+jdbc_isolationLevel=TRANSACTION_READ_COMMITTED
+
+
+# Namespace for the keys stored in Dynomite/Redis
+workflow_namespace_prefix=conductor
+
+# Namespace prefix for the dyno queues
+workflow_namespace_queue_prefix=conductor_queues
+
+# Transport address to elasticsearch
+workflow_elasticsearch_url=edclesmd101.bcbsfl.com:9300 
+workflow_elasticsearch_version=5
+
+# Name of the elasticsearch cluster
+workflow_elasticsearch_index_name=<conductor_index_name>
+workflow_elasticsearch_fb_module_enable=true
+
+MALLOC_ARENA_MAX=4
+
+#conductor_additional_modules=com.bcbsfl.filter.security.config.ConductorFBSecurityServletModule
+
+url_path=/conductor/api/v1
+JAVA_OPTIONS=-DLOG_LEVEL=INFO

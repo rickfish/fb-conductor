@@ -1,0 +1,11 @@
+{
+  "order": 1,
+  "index_patterns": [
+    "conductor_stage_task_*"
+  ],
+  "settings": {},
+  "mappings": {},
+  "aliases": {
+    "conductor_stage_task": {}
+  }
+}

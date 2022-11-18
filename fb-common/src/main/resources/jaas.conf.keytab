@@ -1,0 +1,8 @@
+KafkaClient {
+    com.sun.security.auth.module.Krb5LoginModule required
+    useKeyTab=true
+    storeKey=true
+    serviceName="mqshdpu-kafka"
+    keyTab="c:/users/u447/gitrepos/conductor-dev/fb-common/src/main/resources/svc-sioetdu.keytab"
+    principal="svc-sioetdu@BCBSFL.COM";
+};

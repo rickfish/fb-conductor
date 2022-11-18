@@ -1,0 +1,47 @@
+dependencies {
+	configurations.all {
+		exclude group: 'amazon', module: 'aws-java-sdk'
+		exclude group: 'com.thoughtworks.xstream', module: 'xstream'
+		exclude group: 'io.netty', module: 'netty-resolver-dns'
+		exclude group: 'com.squareup.okhttp', module: 'okhttp'
+		resolutionStrategy {
+	       	force 'net.java.dev.jna:jna:+'
+			force 'commons-beanutils:commons-beanutils:+'
+			force 'commons-collections:commons-collections:+'
+			force 'io.netty:netty-common:4.1.48.Final'
+			force 'io.netty:netty-transport:4.1.48.Final'
+			force 'io.netty:netty-codec:4.1.48.Final'
+			force 'io.netty:netty-codec-http:4.1.53.Final'
+			force 'io.netty:netty-codec-http2:4.1.48.Final'
+			force 'xerces:xercesImpl:2.12.0'
+			force 'org.apache.httpcomponents:httpclient-cache:+'
+			force 'net.java.dev.jna:jna-platform:+'
+			force 'com.amazonaws:aws-java-sdk-sqs:+'
+			force "org.apache.thrift:libthrift:+"
+			force "net.minidev:json-smart:+"
+			force "org.apache.logging.log4j:log4j-api:2.17.0"
+    		force "org.apache.logging.log4j:log4j-core:2.17.0"
+			force "com.fasterxml.jackson.core:jackson-databind:2.13.1"
+		}
+	}                                                                                       
+
+	compile group: 'com.google.inject', name: 'guice', version: '4.1.0'
+	compile group: 'com.google.inject.extensions', name: 'guice-servlet', version: '4.1.0'
+	
+	compile ('io.jsonwebtoken:jjwt:0.7.0') {
+    	exclude group: 'org.slf4j'
+	}
+	compile 'org.joda:joda-beans:1.8'
+	compile ('net.sf.dozer:dozer:5.4.0') {
+		exclude group: 'org.slf4j'
+	}
+	compile "org.apache.logging.log4j:log4j-api:${revLog4jApi}"
+	compile "org.apache.commons:commons-lang3:${revCommonsLang3}"
+    compile project(':conductor-common')
+    compile project(':conductor-core')
+    compile project(':conductor-fb-common')
+	compile "com.sun.jersey:jersey-bundle:${revJerseyBundle}"
+	compile "javax.ws.rs:jsr311-api:${revJsr311Api}"
+	compileOnly "javax.servlet:javax.servlet-api:${revServletApi}"
+	compile('etd.user-cache:user-cache:1.2.9')
+}

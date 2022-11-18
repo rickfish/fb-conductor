@@ -1,0 +1,1880 @@
+{
+  "createTime": 1561417978053,
+  "updateTime": 1561418829535,
+  "status": "RUNNING",
+  "endTime": 0,
+  "workflowId": "e6239187-0a13-45d4-9c9d-4f53baefaffa",
+  "tasks": [
+    {
+      "taskType": "claims_workflow_search_medical_records_task_tstb",
+      "status": "COMPLETED",
+      "inputData": {
+        "claim": {
+          "claimNumber": "431016_UJ9H_29",
+          "taskType": "HC",
+          "holdCode": "HPINV",
+          "lineOfBusiness": "MPP",
+          "groupNumber": "99997",
+          "providerNumber": "772",
+          "claimType": "I",
+          "hasAttachments": false,
+          "claimAge": 193,
+          "sequenceClaimId": 1262245317,
+          "claimReceivedDate": "12/12/2018",
+          "isEligibleForAutomation": false,
+          "claimServiceDate": "12/01/2018",
+          "claimThruDate": "12/01/2018",
+          "memberId": "H88979277",
+          "personNumber": "01",
+          "hasBeenReviewed": false,
+          "patientLastName": "MAHAFFEY",
+          "patientFirstName": "KENNETH",
+          "patientDateOfBirth": "01/03/1948",
+          "holdCodeList": [
+            {
+              "reasonCode": "HPINV",
+              "lineNumber": 2,
+              "history": " ",
+              "contestedInd": "N"
+            }
+          ],
+          "hasHPINV": false,
+          "claimIndicator": "E",
+          "groupId": "9999713201",
+          "providerParStatus": "N"
+        },
+        "secRole": "GEN"
+      },
+      "referenceTaskName": "t1",
+      "retryCount": 0,
+      "seq": 1,
+      "pollCount": 1,
+      "taskDefName": "claims_workflow_search_medical_records_task_tstb",
+      "scheduledTime": 1561417991827,
+      "startTime": 1561418668989,
+      "endTime": 1561418677616,
+      "updateTime": 1561418668989,
+      "startDelayInSeconds": 0,
+      "retried": false,
+      "executed": true,
+      "callbackFromWorker": true,
+      "responseTimeoutSeconds": 3600,
+      "workflowInstanceId": "e6239187-0a13-45d4-9c9d-4f53baefaffa",
+      "workflowType": "claims_workflow_task_creation_workflow_tstb",
+      "taskId": "1f8a03e8-2327-4adf-8320-7f11e99d3514",
+      "callbackAfterSeconds": 0,
+      "workerId": "cwf-migration-router-tstb-36-vddjt",
+      "outputData": {
+        "medical-records:request": {
+          "medicalRecordSearchHeader": {
+            "transactionId": "597275c8-d6b9-4a5e-b512-c51bacbe9408",
+            "clientId": "claims-workflow",
+            "tranDateTimeStamp": "06/24/2019 19:24:36",
+            "source": "AIS"
+          },
+          "contractNumber": "H88979277",
+          "providerId": "772",
+          "serviceFromDate": "09/01/2018",
+          "serviceToDate": "03/01/2019"
+        },
+        "medical-records:response": {
+          "medicalRecordSearchHeader": {
+            "transactionId": "597275c8-d6b9-4a5e-b512-c51bacbe9408",
+            "clientId": "claims-workflow",
+            "tranDateTimeStamp": "06/24/2019 19:24:36",
+            "source": "AIS",
+            "responseCode": "00",
+            "responseMessage": "Success"
+          },
+          "recordCount": 1,
+          "medicalRecordSearchResponseDetails": [
+            {
+              "aisRequestNumber": "51871307",
+              "aisRequestStatus": "RR",
+              "aisStatusDescription": "Response Received",
+              "serviceFromDate": "01/01/2019",
+              "serviceToDate": "01/01/2019",
+              "contractNumber": "H88979277",
+              "groupId": "99999",
+              "providerId": "772",
+              "solicited": "N",
+              "source": "EIP",
+              "patient": {},
+              "loincDetails": [
+                {
+                  "loincCode": "28650-0",
+                  "description": "CLINICAL NOTES AND CHART SECTIONS (SET)",
+                  "imageUrl": "http://eip-nav.bcbsfl.com/eip_app_v2/index.cfm?imagetype=CLAIM&IMAGE=598230972&Report=ImgDetails&fuseaction=Reports.EIPREPORT",
+                  "dateReceived": "01/18/2019",
+                  "imageId": "598230972"
+                }
+              ]
+            }
+          ]
+        },
+        "claim": {
+          "claimNumber": "431016_UJ9H_29",
+          "taskType": "HC",
+          "holdCode": "HPINV",
+          "lineOfBusiness": "MPP",
+          "groupNumber": "99997",
+          "providerNumber": "772",
+          "claimType": "I",
+          "hasAttachments": false,
+          "claimAge": 193,
+          "sequenceClaimId": 1262245317,
+          "claimReceivedDate": "12/12/2018",
+          "isEligibleForAutomation": false,
+          "claimServiceDate": "12/01/2018",
+          "claimThruDate": "12/01/2018",
+          "memberId": "H88979277",
+          "personNumber": "01",
+          "hasBeenReviewed": false,
+          "patientLastName": "MAHAFFEY",
+          "patientFirstName": "KENNETH",
+          "patientDateOfBirth": "01/03/1948",
+          "holdCodeList": [
+            {
+              "reasonCode": "HPINV",
+              "lineNumber": 2,
+              "history": " ",
+              "contestedInd": "N"
+            }
+          ],
+          "hasHPINV": false,
+          "claimIndicator": "E",
+          "groupId": "9999713201",
+          "providerParStatus": "N"
+        }
+      },
+      "workflowTask": {
+        "name": "claims_workflow_search_medical_records_task_tstb",
+        "taskReferenceName": "t1",
+        "inputParameters": {
+          "claim": "${workflow.input.claim}",
+          "secRole": "${workflow.input.secRole}"
+        },
+        "type": "SIMPLE",
+        "startDelay": 0,
+        "optional": false,
+        "taskDefinition": {
+          "ownerApp": "dmd",
+          "updateTime": 1560792664516,
+          "name": "claims_workflow_search_medical_records_task_tstb",
+          "description": "Search for medical records",
+          "retryCount": 1,
+          "timeoutSeconds": 0,
+          "timeoutPolicy": "TIME_OUT_WF",
+          "retryLogic": "FIXED",
+          "retryDelaySeconds": 60,
+          "responseTimeoutSeconds": 3600,
+          "rateLimitPerFrequency": 0,
+          "rateLimitFrequencyInSeconds": 1
+        },
+        "asyncComplete": false
+      },
+      "rateLimitPerFrequency": 0,
+      "rateLimitFrequencyInSeconds": 0,
+      "taskDefinition": {
+        "present": true
+      },
+      "queueWaitTime": 677162,
+      "taskStatus": "COMPLETED"
+    },
+    {
+      "taskType": "DECISION",
+      "status": "COMPLETED",
+      "inputData": {
+        "hasChildren": "true",
+        "case": "false"
+      },
+      "referenceTaskName": "d1",
+      "retryCount": 0,
+      "seq": 2,
+      "pollCount": 0,
+      "taskDefName": "DECISION",
+      "scheduledTime": 1561418703755,
+      "startTime": 1561418684159,
+      "endTime": 1561418690715,
+      "updateTime": 1561418690715,
+      "startDelayInSeconds": 0,
+      "retried": false,
+      "executed": true,
+      "callbackFromWorker": true,
+      "responseTimeoutSeconds": 0,
+      "workflowInstanceId": "e6239187-0a13-45d4-9c9d-4f53baefaffa",
+      "workflowType": "claims_workflow_task_creation_workflow_tstb",
+      "taskId": "703703a0-e4b5-49c8-9d04-ad39e0ca1ee2",
+      "callbackAfterSeconds": 0,
+      "outputData": {
+        "caseOutput": [
+          "false"
+        ]
+      },
+      "workflowTask": {
+        "name": "claims_workflow_is_eligible_for_automation_decision_tstb",
+        "taskReferenceName": "d1",
+        "inputParameters": {
+          "claim": "${t1.output.claim}",
+          "medical-records:request": "${t1.output.medical-records:request}",
+          "medical-records:response": "${t1.output.medical-records:response}",
+          "isEligibleForAutomation": "${t1.output.claim.isEligibleForAutomation}",
+          "secRole": "${workflow.input.secRole}"
+        },
+        "type": "DECISION",
+        "caseValueParam": "isEligibleForAutomation",
+        "decisionCases": {
+          "false": [
+            {
+              "name": "claims_workflow_get_claim_queue_id_task_tstb",
+              "taskReferenceName": "t2",
+              "inputParameters": {
+                "claim": "${t1.output.claim}",
+                "medical-records:request": "${t1.output.medical-records:request}",
+                "medical-records:response": "${t1.output.medical-records:response}",
+                "secRole": "${workflow.input.secRole}"
+              },
+              "type": "SIMPLE",
+              "startDelay": 0,
+              "optional": false,
+              "taskDefinition": {
+                "ownerApp": "svc-cwfclit",
+                "updateTime": 1560792697682,
+                "name": "claims_workflow_get_claim_queue_id_task_tstb",
+                "description": "gets the queue id that the claim should belong to based on the sets of rules that the data is run against",
+                "retryCount": 2,
+                "timeoutSeconds": 0,
+                "timeoutPolicy": "TIME_OUT_WF",
+                "retryLogic": "FIXED",
+                "retryDelaySeconds": 30,
+                "responseTimeoutSeconds": 3600,
+                "rateLimitPerFrequency": 0,
+                "rateLimitFrequencyInSeconds": 1
+              },
+              "asyncComplete": false
+            },
+            {
+              "name": "claims_workflow_get_service_agreement_task_tstb",
+              "taskReferenceName": "t3",
+              "inputParameters": {
+                "claim": "${t2.output.claim}",
+                "medical-records:request": "${t2.output.medical-records:request}",
+                "medical-records:response": "${t2.output.medical-records:response}",
+                "queueId": "${t2.output.queueId}",
+                "routingRuleId": "${t2.output.routingRuleId}",
+                "racfId": "${t2.output.racfId}",
+                "secRole": "${workflow.input.secRole}"
+              },
+              "type": "SIMPLE",
+              "startDelay": 0,
+              "optional": false,
+              "taskDefinition": {
+                "ownerApp": "svc-cwfclit",
+                "updateTime": 1560792708486,
+                "name": "claims_workflow_get_service_agreement_task_tstb",
+                "description": "gets the service agreement id and days by executing set of rules and then calculate deadline date",
+                "retryCount": 2,
+                "timeoutSeconds": 0,
+                "timeoutPolicy": "TIME_OUT_WF",
+                "retryLogic": "FIXED",
+                "retryDelaySeconds": 30,
+                "responseTimeoutSeconds": 3600,
+                "rateLimitPerFrequency": 0,
+                "rateLimitFrequencyInSeconds": 1
+              },
+              "asyncComplete": false
+            },
+            {
+              "name": "claims_workflow_process_inventory_staging_item_task_tstb",
+              "taskReferenceName": "t4",
+              "inputParameters": {
+                "claim": "${t3.output.claim}",
+                "medical-records:request": "${t3.output.medical-records:request}",
+                "medical-records:response": "${t3.output.medical-records:response}",
+                "queueId": "${t3.output.queueId}",
+                "routingRuleId": "${t3.output.routingRuleId}",
+                "racfId": "${t3.output.racfId}",
+                "serviceAgreementId": "${t3.output.serviceAgreementId}",
+                "deadlineDate": "${t3.output.deadlineDate}",
+                "secRole": "${workflow.input.secRole}"
+              },
+              "type": "SIMPLE",
+              "startDelay": 0,
+              "optional": false,
+              "taskDefinition": {
+                "ownerApp": "svc-cwfclit",
+                "updateTime": 1560792718718,
+                "name": "claims_workflow_process_inventory_staging_item_task_tstb",
+                "description": "task responsible for cleaning up the inventory staging item",
+                "retryCount": 2,
+                "timeoutSeconds": 0,
+                "timeoutPolicy": "TIME_OUT_WF",
+                "retryLogic": "FIXED",
+                "retryDelaySeconds": 30,
+                "responseTimeoutSeconds": 3600,
+                "rateLimitPerFrequency": 0,
+                "rateLimitFrequencyInSeconds": 1
+              },
+              "asyncComplete": false
+            },
+            {
+              "name": "claims_workflow_awaiting_assignment_to_an_examiner_task_tstb",
+              "taskReferenceName": "t5",
+              "inputParameters": {
+                "claim": "${t4.output.claim}",
+                "medical-records:request": "${t4.output.medical-records:request}",
+                "medical-records:response": "${t4.output.medical-records:response}",
+                "queueId": "${t4.output.queueId}",
+                "routingRuleId": "${t4.output.routingRuleId}",
+                "racfId": "${t4.output.racfId}",
+                "serviceAgreementId": "${t4.output.serviceAgreementId}",
+                "deadlineDate": "${t4.output.deadlineDate}",
+                "assigned": false,
+                "secRole": "${workflow.input.secRole}"
+              },
+              "type": "SIMPLE",
+              "startDelay": 0,
+              "optional": false,
+              "taskDefinition": {
+                "ownerApp": "svc-cwfclit",
+                "updateTime": 1560792730386,
+                "name": "claims_workflow_awaiting_assignment_to_an_examiner_task_tstb",
+                "description": "task responsible for cleaning up the inventory staging item",
+                "retryCount": 2,
+                "timeoutSeconds": 0,
+                "timeoutPolicy": "TIME_OUT_WF",
+                "retryLogic": "FIXED",
+                "retryDelaySeconds": 60,
+                "responseTimeoutSeconds": 3600,
+                "rateLimitPerFrequency": 0,
+                "rateLimitFrequencyInSeconds": 1
+              },
+              "asyncComplete": false
+            },
+            {
+              "name": "claims_workflow_examiners_task_tstb",
+              "taskReferenceName": "t6",
+              "inputParameters": {
+                "claim": "${t5.output.claim}",
+                "medical-records:request": "${t5.output.medical-records:request}",
+                "medical-records:response": "${t5.output.medical-records:response}",
+                "queueId": "${t5.output.queueId}",
+                "routingRuleId": "${t5.output.routingRuleId}",
+                "racfId": "${t5.output.racfId}",
+                "serviceAgreementId": "${t5.output.serviceAgreementId}",
+                "deadlineDate": "${t5.output.deadlineDate}",
+                "assigned": "${t5.output.assigned}",
+                "secRole": "${workflow.input.secRole}"
+              },
+              "type": "WAIT",
+              "startDelay": 0,
+              "optional": false,
+              "asyncComplete": false
+            }
+          ],
+          "true": [
+            {
+              "name": "claims_workflow_deny_held_claim_tstb",
+              "taskReferenceName": "t7",
+              "inputParameters": {
+                "claim": "${t1.output.claim}",
+                "medical-records:request": "${t1.output.medical-records:request}",
+                "medical-records:response": "${t1.output.medical-records:response}",
+                "isEligibleForAutomation": "${t1.output.claim.isEligibleForAutomation}",
+                "secRole": "${workflow.input.secRole}"
+              },
+              "type": "SIMPLE",
+              "startDelay": 0,
+              "optional": false,
+              "taskDefinition": {
+                "ownerApp": "svc-cwfclit",
+                "updateTime": 1560793414356,
+                "name": "claims_workflow_deny_held_claim_tstb",
+                "description": "the task that denies a held claim for some reason.",
+                "retryCount": 2,
+                "timeoutSeconds": 0,
+                "timeoutPolicy": "TIME_OUT_WF",
+                "retryLogic": "FIXED",
+                "retryDelaySeconds": 3,
+                "responseTimeoutSeconds": 3600,
+                "rateLimitPerFrequency": 0,
+                "rateLimitFrequencyInSeconds": 1
+              },
+              "asyncComplete": false
+            },
+            {
+              "name": "claims_workflow_process_inventory_staging_item_task_tstb",
+              "taskReferenceName": "t8",
+              "inputParameters": {
+                "claim": "${t1.output.claim}",
+                "medical-records:request": "${t1.output.medical-records:request}",
+                "medical-records:response": "${t1.output.medical-records:response}",
+                "isEligibleForAutomation": "${t1.output.claim.isEligibleForAutomation}",
+                "secRole": "${workflow.input.secRole}"
+              },
+              "type": "SIMPLE",
+              "startDelay": 0,
+              "optional": false,
+              "taskDefinition": {
+                "ownerApp": "svc-cwfclit",
+                "updateTime": 1560792718718,
+                "name": "claims_workflow_process_inventory_staging_item_task_tstb",
+                "description": "task responsible for cleaning up the inventory staging item",
+                "retryCount": 2,
+                "timeoutSeconds": 0,
+                "timeoutPolicy": "TIME_OUT_WF",
+                "retryLogic": "FIXED",
+                "retryDelaySeconds": 30,
+                "responseTimeoutSeconds": 3600,
+                "rateLimitPerFrequency": 0,
+                "rateLimitFrequencyInSeconds": 1
+              },
+              "asyncComplete": false
+            },
+            {
+              "name": "claims_workflow_task_complete_event_tstb",
+              "taskReferenceName": "e1",
+              "inputParameters": {
+                "processed": true,
+                "claim": "${t1.output.claim}",
+                "secRole": "${workflow.input.secRole}"
+              },
+              "type": "EVENT",
+              "startDelay": 0,
+              "sink": "conductor",
+              "optional": false,
+              "asyncComplete": false
+            }
+          ]
+        },
+        "startDelay": 0,
+        "optional": false,
+        "asyncComplete": false
+      },
+      "rateLimitPerFrequency": 0,
+      "rateLimitFrequencyInSeconds": 0,
+      "taskDefinition": {
+        "present": false
+      },
+      "queueWaitTime": -19596,
+      "taskStatus": "COMPLETED"
+    },
+    {
+      "taskType": "claims_workflow_get_claim_queue_id_task_tstb",
+      "status": "COMPLETED",
+      "inputData": {
+        "claim": {
+          "claimNumber": "431016_UJ9H_29",
+          "taskType": "HC",
+          "holdCode": "HPINV",
+          "lineOfBusiness": "MPP",
+          "groupNumber": "99997",
+          "providerNumber": "772",
+          "claimType": "I",
+          "hasAttachments": false,
+          "claimAge": 193,
+          "sequenceClaimId": 1262245317,
+          "claimReceivedDate": "12/12/2018",
+          "isEligibleForAutomation": false,
+          "claimServiceDate": "12/01/2018",
+          "claimThruDate": "12/01/2018",
+          "memberId": "H88979277",
+          "personNumber": "01",
+          "hasBeenReviewed": false,
+          "patientLastName": "MAHAFFEY",
+          "patientFirstName": "KENNETH",
+          "patientDateOfBirth": "01/03/1948",
+          "holdCodeList": [
+            {
+              "reasonCode": "HPINV",
+              "lineNumber": 2,
+              "history": " ",
+              "contestedInd": "N"
+            }
+          ],
+          "hasHPINV": false,
+          "claimIndicator": "E",
+          "groupId": "9999713201",
+          "providerParStatus": "N"
+        },
+        "medical-records:request": {
+          "medicalRecordSearchHeader": {
+            "transactionId": "597275c8-d6b9-4a5e-b512-c51bacbe9408",
+            "clientId": "claims-workflow",
+            "tranDateTimeStamp": "06/24/2019 19:24:36",
+            "source": "AIS"
+          },
+          "contractNumber": "H88979277",
+          "providerId": "772",
+          "serviceFromDate": "09/01/2018",
+          "serviceToDate": "03/01/2019"
+        },
+        "medical-records:response": {
+          "medicalRecordSearchHeader": {
+            "transactionId": "597275c8-d6b9-4a5e-b512-c51bacbe9408",
+            "clientId": "claims-workflow",
+            "tranDateTimeStamp": "06/24/2019 19:24:36",
+            "source": "AIS",
+            "responseCode": "00",
+            "responseMessage": "Success"
+          },
+          "recordCount": 1,
+          "medicalRecordSearchResponseDetails": [
+            {
+              "aisRequestNumber": "51871307",
+              "aisRequestStatus": "RR",
+              "aisStatusDescription": "Response Received",
+              "serviceFromDate": "01/01/2019",
+              "serviceToDate": "01/01/2019",
+              "contractNumber": "H88979277",
+              "groupId": "99999",
+              "providerId": "772",
+              "solicited": "N",
+              "source": "EIP",
+              "patient": {},
+              "loincDetails": [
+                {
+                  "loincCode": "28650-0",
+                  "description": "CLINICAL NOTES AND CHART SECTIONS (SET)",
+                  "imageUrl": "http://eip-nav.bcbsfl.com/eip_app_v2/index.cfm?imagetype=CLAIM&IMAGE=598230972&Report=ImgDetails&fuseaction=Reports.EIPREPORT",
+                  "dateReceived": "01/18/2019",
+                  "imageId": "598230972"
+                }
+              ]
+            }
+          ]
+        },
+        "secRole": "GEN"
+      },
+      "referenceTaskName": "t2",
+      "retryCount": 0,
+      "seq": 3,
+      "pollCount": 1,
+      "taskDefName": "claims_workflow_get_claim_queue_id_task_tstb",
+      "scheduledTime": 1561418703760,
+      "startTime": 1561418710261,
+      "endTime": 1561418723084,
+      "updateTime": 1561418710261,
+      "startDelayInSeconds": 0,
+      "retried": false,
+      "executed": true,
+      "callbackFromWorker": true,
+      "responseTimeoutSeconds": 3600,
+      "workflowInstanceId": "e6239187-0a13-45d4-9c9d-4f53baefaffa",
+      "workflowType": "claims_workflow_task_creation_workflow_tstb",
+      "taskId": "77b22156-4ccd-443a-a4fc-a037c3d958b4",
+      "callbackAfterSeconds": 0,
+      "workerId": "cwf-migration-router-tstb-36-vddjt",
+      "outputData": {
+        "claim": {
+          "claimNumber": "431016_UJ9H_29",
+          "taskType": "HC",
+          "holdCode": "HPINV",
+          "lineOfBusiness": "MPP",
+          "groupNumber": "99997",
+          "providerNumber": "772",
+          "claimType": "I",
+          "hasAttachments": false,
+          "claimAge": 193,
+          "sequenceClaimId": 1262245317,
+          "claimReceivedDate": "12/12/2018",
+          "isEligibleForAutomation": false,
+          "claimServiceDate": "12/01/2018",
+          "claimThruDate": "12/01/2018",
+          "memberId": "H88979277",
+          "personNumber": "01",
+          "hasBeenReviewed": false,
+          "patientLastName": "MAHAFFEY",
+          "patientFirstName": "KENNETH",
+          "patientDateOfBirth": "01/03/1948",
+          "holdCodeList": [
+            {
+              "reasonCode": "HPINV",
+              "lineNumber": 2,
+              "history": " ",
+              "contestedInd": "N"
+            }
+          ],
+          "hasHPINV": false,
+          "claimIndicator": "E",
+          "groupId": "9999713201",
+          "providerParStatus": "N"
+        },
+        "medical-records:request": {
+          "medicalRecordSearchHeader": {
+            "transactionId": "597275c8-d6b9-4a5e-b512-c51bacbe9408",
+            "clientId": "claims-workflow",
+            "tranDateTimeStamp": "06/24/2019 19:24:36",
+            "source": "AIS"
+          },
+          "contractNumber": "H88979277",
+          "providerId": "772",
+          "serviceFromDate": "09/01/2018",
+          "serviceToDate": "03/01/2019"
+        },
+        "medical-records:response": {
+          "medicalRecordSearchHeader": {
+            "transactionId": "597275c8-d6b9-4a5e-b512-c51bacbe9408",
+            "clientId": "claims-workflow",
+            "tranDateTimeStamp": "06/24/2019 19:24:36",
+            "source": "AIS",
+            "responseCode": "00",
+            "responseMessage": "Success"
+          },
+          "recordCount": 1,
+          "medicalRecordSearchResponseDetails": [
+            {
+              "aisRequestNumber": "51871307",
+              "aisRequestStatus": "RR",
+              "aisStatusDescription": "Response Received",
+              "serviceFromDate": "01/01/2019",
+              "serviceToDate": "01/01/2019",
+              "contractNumber": "H88979277",
+              "groupId": "99999",
+              "providerId": "772",
+              "solicited": "N",
+              "source": "EIP",
+              "patient": {},
+              "loincDetails": [
+                {
+                  "loincCode": "28650-0",
+                  "description": "CLINICAL NOTES AND CHART SECTIONS (SET)",
+                  "imageUrl": "http://eip-nav.bcbsfl.com/eip_app_v2/index.cfm?imagetype=CLAIM&IMAGE=598230972&Report=ImgDetails&fuseaction=Reports.EIPREPORT",
+                  "dateReceived": "01/18/2019",
+                  "imageId": "598230972"
+                }
+              ]
+            }
+          ]
+        },
+        "secRole": "GEN",
+        "queueId": "20",
+        "routingRuleId": "25",
+        "racfId": null
+      },
+      "workflowTask": {
+        "name": "claims_workflow_get_claim_queue_id_task_tstb",
+        "taskReferenceName": "t2",
+        "inputParameters": {
+          "claim": "${t1.output.claim}",
+          "medical-records:request": "${t1.output.medical-records:request}",
+          "medical-records:response": "${t1.output.medical-records:response}",
+          "secRole": "${workflow.input.secRole}"
+        },
+        "type": "SIMPLE",
+        "startDelay": 0,
+        "optional": false,
+        "taskDefinition": {
+          "ownerApp": "svc-cwfclit",
+          "updateTime": 1560792697682,
+          "name": "claims_workflow_get_claim_queue_id_task_tstb",
+          "description": "gets the queue id that the claim should belong to based on the sets of rules that the data is run against",
+          "retryCount": 2,
+          "timeoutSeconds": 0,
+          "timeoutPolicy": "TIME_OUT_WF",
+          "retryLogic": "FIXED",
+          "retryDelaySeconds": 30,
+          "responseTimeoutSeconds": 3600,
+          "rateLimitPerFrequency": 0,
+          "rateLimitFrequencyInSeconds": 1
+        },
+        "asyncComplete": false
+      },
+      "rateLimitPerFrequency": 0,
+      "rateLimitFrequencyInSeconds": 0,
+      "taskDefinition": {
+        "present": true
+      },
+      "queueWaitTime": 6501,
+      "taskStatus": "COMPLETED"
+    },
+    {
+      "taskType": "claims_workflow_get_service_agreement_task_tstb",
+      "status": "COMPLETED",
+      "inputData": {
+        "claim": {
+          "claimNumber": "431016_UJ9H_29",
+          "taskType": "HC",
+          "holdCode": "HPINV",
+          "lineOfBusiness": "MPP",
+          "groupNumber": "99997",
+          "providerNumber": "772",
+          "claimType": "I",
+          "hasAttachments": false,
+          "claimAge": 193,
+          "sequenceClaimId": 1262245317,
+          "claimReceivedDate": "12/12/2018",
+          "isEligibleForAutomation": false,
+          "claimServiceDate": "12/01/2018",
+          "claimThruDate": "12/01/2018",
+          "memberId": "H88979277",
+          "personNumber": "01",
+          "hasBeenReviewed": false,
+          "patientLastName": "MAHAFFEY",
+          "patientFirstName": "KENNETH",
+          "patientDateOfBirth": "01/03/1948",
+          "holdCodeList": [
+            {
+              "reasonCode": "HPINV",
+              "lineNumber": 2,
+              "history": " ",
+              "contestedInd": "N"
+            }
+          ],
+          "hasHPINV": false,
+          "claimIndicator": "E",
+          "groupId": "9999713201",
+          "providerParStatus": "N"
+        },
+        "medical-records:request": {
+          "medicalRecordSearchHeader": {
+            "transactionId": "597275c8-d6b9-4a5e-b512-c51bacbe9408",
+            "clientId": "claims-workflow",
+            "tranDateTimeStamp": "06/24/2019 19:24:36",
+            "source": "AIS"
+          },
+          "contractNumber": "H88979277",
+          "providerId": "772",
+          "serviceFromDate": "09/01/2018",
+          "serviceToDate": "03/01/2019"
+        },
+        "medical-records:response": {
+          "medicalRecordSearchHeader": {
+            "transactionId": "597275c8-d6b9-4a5e-b512-c51bacbe9408",
+            "clientId": "claims-workflow",
+            "tranDateTimeStamp": "06/24/2019 19:24:36",
+            "source": "AIS",
+            "responseCode": "00",
+            "responseMessage": "Success"
+          },
+          "recordCount": 1,
+          "medicalRecordSearchResponseDetails": [
+            {
+              "aisRequestNumber": "51871307",
+              "aisRequestStatus": "RR",
+              "aisStatusDescription": "Response Received",
+              "serviceFromDate": "01/01/2019",
+              "serviceToDate": "01/01/2019",
+              "contractNumber": "H88979277",
+              "groupId": "99999",
+              "providerId": "772",
+              "solicited": "N",
+              "source": "EIP",
+              "patient": {},
+              "loincDetails": [
+                {
+                  "loincCode": "28650-0",
+                  "description": "CLINICAL NOTES AND CHART SECTIONS (SET)",
+                  "imageUrl": "http://eip-nav.bcbsfl.com/eip_app_v2/index.cfm?imagetype=CLAIM&IMAGE=598230972&Report=ImgDetails&fuseaction=Reports.EIPREPORT",
+                  "dateReceived": "01/18/2019",
+                  "imageId": "598230972"
+                }
+              ]
+            }
+          ]
+        },
+        "queueId": "20",
+        "routingRuleId": "25",
+        "racfId": null,
+        "secRole": "GEN"
+      },
+      "referenceTaskName": "t3",
+      "retryCount": 0,
+      "seq": 4,
+      "pollCount": 1,
+      "taskDefName": "claims_workflow_get_service_agreement_task_tstb",
+      "scheduledTime": 1561418743303,
+      "startTime": 1561418745494,
+      "endTime": 1561418753498,
+      "updateTime": 1561418745494,
+      "startDelayInSeconds": 0,
+      "retried": false,
+      "executed": true,
+      "callbackFromWorker": true,
+      "responseTimeoutSeconds": 3600,
+      "workflowInstanceId": "e6239187-0a13-45d4-9c9d-4f53baefaffa",
+      "workflowType": "claims_workflow_task_creation_workflow_tstb",
+      "taskId": "fd34e2bd-3ff5-433b-b01b-02e218a523d7",
+      "callbackAfterSeconds": 0,
+      "workerId": "cwf-migration-router-tstb-36-vddjt",
+      "outputData": {
+        "claim": {
+          "claimNumber": "431016_UJ9H_29",
+          "taskType": "HC",
+          "holdCode": "HPINV",
+          "lineOfBusiness": "MPP",
+          "groupNumber": "99997",
+          "providerNumber": "772",
+          "claimType": "I",
+          "hasAttachments": false,
+          "claimAge": 193,
+          "sequenceClaimId": 1262245317,
+          "claimReceivedDate": "12/12/2018",
+          "isEligibleForAutomation": false,
+          "claimServiceDate": "12/01/2018",
+          "claimThruDate": "12/01/2018",
+          "memberId": "H88979277",
+          "personNumber": "01",
+          "hasBeenReviewed": false,
+          "patientLastName": "MAHAFFEY",
+          "patientFirstName": "KENNETH",
+          "patientDateOfBirth": "01/03/1948",
+          "holdCodeList": [
+            {
+              "reasonCode": "HPINV",
+              "lineNumber": 2,
+              "history": " ",
+              "contestedInd": "N"
+            }
+          ],
+          "hasHPINV": false,
+          "claimIndicator": "E",
+          "groupId": "9999713201",
+          "providerParStatus": "N"
+        },
+        "medical-records:request": {
+          "medicalRecordSearchHeader": {
+            "transactionId": "597275c8-d6b9-4a5e-b512-c51bacbe9408",
+            "clientId": "claims-workflow",
+            "tranDateTimeStamp": "06/24/2019 19:24:36",
+            "source": "AIS"
+          },
+          "contractNumber": "H88979277",
+          "providerId": "772",
+          "serviceFromDate": "09/01/2018",
+          "serviceToDate": "03/01/2019"
+        },
+        "medical-records:response": {
+          "medicalRecordSearchHeader": {
+            "transactionId": "597275c8-d6b9-4a5e-b512-c51bacbe9408",
+            "clientId": "claims-workflow",
+            "tranDateTimeStamp": "06/24/2019 19:24:36",
+            "source": "AIS",
+            "responseCode": "00",
+            "responseMessage": "Success"
+          },
+          "recordCount": 1,
+          "medicalRecordSearchResponseDetails": [
+            {
+              "aisRequestNumber": "51871307",
+              "aisRequestStatus": "RR",
+              "aisStatusDescription": "Response Received",
+              "serviceFromDate": "01/01/2019",
+              "serviceToDate": "01/01/2019",
+              "contractNumber": "H88979277",
+              "groupId": "99999",
+              "providerId": "772",
+              "solicited": "N",
+              "source": "EIP",
+              "patient": {},
+              "loincDetails": [
+                {
+                  "loincCode": "28650-0",
+                  "description": "CLINICAL NOTES AND CHART SECTIONS (SET)",
+                  "imageUrl": "http://eip-nav.bcbsfl.com/eip_app_v2/index.cfm?imagetype=CLAIM&IMAGE=598230972&Report=ImgDetails&fuseaction=Reports.EIPREPORT",
+                  "dateReceived": "01/18/2019",
+                  "imageId": "598230972"
+                }
+              ]
+            }
+          ]
+        },
+        "queueId": "20",
+        "routingRuleId": "25",
+        "racfId": null,
+        "secRole": "GEN",
+        "serviceAgreementId": "41",
+        "deadlineDate": "12/20/2018"
+      },
+      "workflowTask": {
+        "name": "claims_workflow_get_service_agreement_task_tstb",
+        "taskReferenceName": "t3",
+        "inputParameters": {
+          "claim": "${t2.output.claim}",
+          "medical-records:request": "${t2.output.medical-records:request}",
+          "medical-records:response": "${t2.output.medical-records:response}",
+          "queueId": "${t2.output.queueId}",
+          "routingRuleId": "${t2.output.routingRuleId}",
+          "racfId": "${t2.output.racfId}",
+          "secRole": "${workflow.input.secRole}"
+        },
+        "type": "SIMPLE",
+        "startDelay": 0,
+        "optional": false,
+        "taskDefinition": {
+          "ownerApp": "svc-cwfclit",
+          "updateTime": 1560792708486,
+          "name": "claims_workflow_get_service_agreement_task_tstb",
+          "description": "gets the service agreement id and days by executing set of rules and then calculate deadline date",
+          "retryCount": 2,
+          "timeoutSeconds": 0,
+          "timeoutPolicy": "TIME_OUT_WF",
+          "retryLogic": "FIXED",
+          "retryDelaySeconds": 30,
+          "responseTimeoutSeconds": 3600,
+          "rateLimitPerFrequency": 0,
+          "rateLimitFrequencyInSeconds": 1
+        },
+        "asyncComplete": false
+      },
+      "rateLimitPerFrequency": 0,
+      "rateLimitFrequencyInSeconds": 0,
+      "taskDefinition": {
+        "present": true
+      },
+      "queueWaitTime": 2191,
+      "taskStatus": "COMPLETED"
+    },
+    {
+      "taskType": "claims_workflow_process_inventory_staging_item_task_tstb",
+      "status": "COMPLETED",
+      "inputData": {
+        "claim": {
+          "claimNumber": "431016_UJ9H_29",
+          "taskType": "HC",
+          "holdCode": "HPINV",
+          "lineOfBusiness": "MPP",
+          "groupNumber": "99997",
+          "providerNumber": "772",
+          "claimType": "I",
+          "hasAttachments": false,
+          "claimAge": 193,
+          "sequenceClaimId": 1262245317,
+          "claimReceivedDate": "12/12/2018",
+          "isEligibleForAutomation": false,
+          "claimServiceDate": "12/01/2018",
+          "claimThruDate": "12/01/2018",
+          "memberId": "H88979277",
+          "personNumber": "01",
+          "hasBeenReviewed": false,
+          "patientLastName": "MAHAFFEY",
+          "patientFirstName": "KENNETH",
+          "patientDateOfBirth": "01/03/1948",
+          "holdCodeList": [
+            {
+              "reasonCode": "HPINV",
+              "lineNumber": 2,
+              "history": " ",
+              "contestedInd": "N"
+            }
+          ],
+          "hasHPINV": false,
+          "claimIndicator": "E",
+          "groupId": "9999713201",
+          "providerParStatus": "N"
+        },
+        "medical-records:request": {
+          "medicalRecordSearchHeader": {
+            "transactionId": "597275c8-d6b9-4a5e-b512-c51bacbe9408",
+            "clientId": "claims-workflow",
+            "tranDateTimeStamp": "06/24/2019 19:24:36",
+            "source": "AIS"
+          },
+          "contractNumber": "H88979277",
+          "providerId": "772",
+          "serviceFromDate": "09/01/2018",
+          "serviceToDate": "03/01/2019"
+        },
+        "medical-records:response": {
+          "medicalRecordSearchHeader": {
+            "transactionId": "597275c8-d6b9-4a5e-b512-c51bacbe9408",
+            "clientId": "claims-workflow",
+            "tranDateTimeStamp": "06/24/2019 19:24:36",
+            "source": "AIS",
+            "responseCode": "00",
+            "responseMessage": "Success"
+          },
+          "recordCount": 1,
+          "medicalRecordSearchResponseDetails": [
+            {
+              "aisRequestNumber": "51871307",
+              "aisRequestStatus": "RR",
+              "aisStatusDescription": "Response Received",
+              "serviceFromDate": "01/01/2019",
+              "serviceToDate": "01/01/2019",
+              "contractNumber": "H88979277",
+              "groupId": "99999",
+              "providerId": "772",
+              "solicited": "N",
+              "source": "EIP",
+              "patient": {},
+              "loincDetails": [
+                {
+                  "loincCode": "28650-0",
+                  "description": "CLINICAL NOTES AND CHART SECTIONS (SET)",
+                  "imageUrl": "http://eip-nav.bcbsfl.com/eip_app_v2/index.cfm?imagetype=CLAIM&IMAGE=598230972&Report=ImgDetails&fuseaction=Reports.EIPREPORT",
+                  "dateReceived": "01/18/2019",
+                  "imageId": "598230972"
+                }
+              ]
+            }
+          ]
+        },
+        "queueId": "20",
+        "routingRuleId": "25",
+        "racfId": null,
+        "serviceAgreementId": "41",
+        "deadlineDate": "12/20/2018",
+        "secRole": "GEN"
+      },
+      "referenceTaskName": "t4",
+      "retryCount": 0,
+      "seq": 5,
+      "pollCount": 1,
+      "taskDefName": "claims_workflow_process_inventory_staging_item_task_tstb",
+      "scheduledTime": 1561418773187,
+      "startTime": 1561418773594,
+      "endTime": 1561418783378,
+      "updateTime": 1561418773594,
+      "startDelayInSeconds": 0,
+      "retried": false,
+      "executed": true,
+      "callbackFromWorker": true,
+      "responseTimeoutSeconds": 3600,
+      "workflowInstanceId": "e6239187-0a13-45d4-9c9d-4f53baefaffa",
+      "workflowType": "claims_workflow_task_creation_workflow_tstb",
+      "taskId": "6d52f2b4-6904-4c96-b1c4-ad44fdbce7c9",
+      "callbackAfterSeconds": 0,
+      "workerId": "cwf-migration-router-tstb-36-vddjt",
+      "outputData": {
+        "claim": {
+          "claimNumber": "431016_UJ9H_29",
+          "taskType": "HC",
+          "holdCode": "HPINV",
+          "lineOfBusiness": "MPP",
+          "groupNumber": "99997",
+          "providerNumber": "772",
+          "claimType": "I",
+          "hasAttachments": false,
+          "claimAge": 193,
+          "sequenceClaimId": 1262245317,
+          "claimReceivedDate": "12/12/2018",
+          "isEligibleForAutomation": false,
+          "claimServiceDate": "12/01/2018",
+          "claimThruDate": "12/01/2018",
+          "memberId": "H88979277",
+          "personNumber": "01",
+          "hasBeenReviewed": false,
+          "patientLastName": "MAHAFFEY",
+          "patientFirstName": "KENNETH",
+          "patientDateOfBirth": "01/03/1948",
+          "holdCodeList": [
+            {
+              "reasonCode": "HPINV",
+              "lineNumber": 2,
+              "history": " ",
+              "contestedInd": "N"
+            }
+          ],
+          "hasHPINV": false,
+          "claimIndicator": "E",
+          "groupId": "9999713201",
+          "providerParStatus": "N"
+        },
+        "medical-records:request": {
+          "medicalRecordSearchHeader": {
+            "transactionId": "597275c8-d6b9-4a5e-b512-c51bacbe9408",
+            "clientId": "claims-workflow",
+            "tranDateTimeStamp": "06/24/2019 19:24:36",
+            "source": "AIS"
+          },
+          "contractNumber": "H88979277",
+          "providerId": "772",
+          "serviceFromDate": "09/01/2018",
+          "serviceToDate": "03/01/2019"
+        },
+        "medical-records:response": {
+          "medicalRecordSearchHeader": {
+            "transactionId": "597275c8-d6b9-4a5e-b512-c51bacbe9408",
+            "clientId": "claims-workflow",
+            "tranDateTimeStamp": "06/24/2019 19:24:36",
+            "source": "AIS",
+            "responseCode": "00",
+            "responseMessage": "Success"
+          },
+          "recordCount": 1,
+          "medicalRecordSearchResponseDetails": [
+            {
+              "aisRequestNumber": "51871307",
+              "aisRequestStatus": "RR",
+              "aisStatusDescription": "Response Received",
+              "serviceFromDate": "01/01/2019",
+              "serviceToDate": "01/01/2019",
+              "contractNumber": "H88979277",
+              "groupId": "99999",
+              "providerId": "772",
+              "solicited": "N",
+              "source": "EIP",
+              "patient": {},
+              "loincDetails": [
+                {
+                  "loincCode": "28650-0",
+                  "description": "CLINICAL NOTES AND CHART SECTIONS (SET)",
+                  "imageUrl": "http://eip-nav.bcbsfl.com/eip_app_v2/index.cfm?imagetype=CLAIM&IMAGE=598230972&Report=ImgDetails&fuseaction=Reports.EIPREPORT",
+                  "dateReceived": "01/18/2019",
+                  "imageId": "598230972"
+                }
+              ]
+            }
+          ]
+        },
+        "queueId": "20",
+        "routingRuleId": "25",
+        "racfId": null,
+        "serviceAgreementId": "41",
+        "deadlineDate": "12/20/2018",
+        "secRole": "GEN"
+      },
+      "workflowTask": {
+        "name": "claims_workflow_process_inventory_staging_item_task_tstb",
+        "taskReferenceName": "t4",
+        "inputParameters": {
+          "claim": "${t3.output.claim}",
+          "medical-records:request": "${t3.output.medical-records:request}",
+          "medical-records:response": "${t3.output.medical-records:response}",
+          "queueId": "${t3.output.queueId}",
+          "routingRuleId": "${t3.output.routingRuleId}",
+          "racfId": "${t3.output.racfId}",
+          "serviceAgreementId": "${t3.output.serviceAgreementId}",
+          "deadlineDate": "${t3.output.deadlineDate}",
+          "secRole": "${workflow.input.secRole}"
+        },
+        "type": "SIMPLE",
+        "startDelay": 0,
+        "optional": false,
+        "taskDefinition": {
+          "ownerApp": "svc-cwfclit",
+          "updateTime": 1560792718718,
+          "name": "claims_workflow_process_inventory_staging_item_task_tstb",
+          "description": "task responsible for cleaning up the inventory staging item",
+          "retryCount": 2,
+          "timeoutSeconds": 0,
+          "timeoutPolicy": "TIME_OUT_WF",
+          "retryLogic": "FIXED",
+          "retryDelaySeconds": 30,
+          "responseTimeoutSeconds": 3600,
+          "rateLimitPerFrequency": 0,
+          "rateLimitFrequencyInSeconds": 1
+        },
+        "asyncComplete": false
+      },
+      "rateLimitPerFrequency": 0,
+      "rateLimitFrequencyInSeconds": 0,
+      "taskDefinition": {
+        "present": true
+      },
+      "queueWaitTime": 407,
+      "taskStatus": "COMPLETED"
+    },
+    {
+      "taskType": "claims_workflow_awaiting_assignment_to_an_examiner_task_tstb",
+      "status": "COMPLETED",
+      "inputData": {
+        "claim": {
+          "claimNumber": "431016_UJ9H_29",
+          "taskType": "HC",
+          "holdCode": "HPINV",
+          "lineOfBusiness": "MPP",
+          "groupNumber": "99997",
+          "providerNumber": "772",
+          "claimType": "I",
+          "hasAttachments": false,
+          "claimAge": 193,
+          "sequenceClaimId": 1262245317,
+          "claimReceivedDate": "12/12/2018",
+          "isEligibleForAutomation": false,
+          "claimServiceDate": "12/01/2018",
+          "claimThruDate": "12/01/2018",
+          "memberId": "H88979277",
+          "personNumber": "01",
+          "hasBeenReviewed": false,
+          "patientLastName": "MAHAFFEY",
+          "patientFirstName": "KENNETH",
+          "patientDateOfBirth": "01/03/1948",
+          "holdCodeList": [
+            {
+              "reasonCode": "HPINV",
+              "lineNumber": 2,
+              "history": " ",
+              "contestedInd": "N"
+            }
+          ],
+          "hasHPINV": false,
+          "claimIndicator": "E",
+          "groupId": "9999713201",
+          "providerParStatus": "N"
+        },
+        "medical-records:request": {
+          "medicalRecordSearchHeader": {
+            "transactionId": "597275c8-d6b9-4a5e-b512-c51bacbe9408",
+            "clientId": "claims-workflow",
+            "tranDateTimeStamp": "06/24/2019 19:24:36",
+            "source": "AIS"
+          },
+          "contractNumber": "H88979277",
+          "providerId": "772",
+          "serviceFromDate": "09/01/2018",
+          "serviceToDate": "03/01/2019"
+        },
+        "medical-records:response": {
+          "medicalRecordSearchHeader": {
+            "transactionId": "597275c8-d6b9-4a5e-b512-c51bacbe9408",
+            "clientId": "claims-workflow",
+            "tranDateTimeStamp": "06/24/2019 19:24:36",
+            "source": "AIS",
+            "responseCode": "00",
+            "responseMessage": "Success"
+          },
+          "recordCount": 1,
+          "medicalRecordSearchResponseDetails": [
+            {
+              "aisRequestNumber": "51871307",
+              "aisRequestStatus": "RR",
+              "aisStatusDescription": "Response Received",
+              "serviceFromDate": "01/01/2019",
+              "serviceToDate": "01/01/2019",
+              "contractNumber": "H88979277",
+              "groupId": "99999",
+              "providerId": "772",
+              "solicited": "N",
+              "source": "EIP",
+              "patient": {},
+              "loincDetails": [
+                {
+                  "loincCode": "28650-0",
+                  "description": "CLINICAL NOTES AND CHART SECTIONS (SET)",
+                  "imageUrl": "http://eip-nav.bcbsfl.com/eip_app_v2/index.cfm?imagetype=CLAIM&IMAGE=598230972&Report=ImgDetails&fuseaction=Reports.EIPREPORT",
+                  "dateReceived": "01/18/2019",
+                  "imageId": "598230972"
+                }
+              ]
+            }
+          ]
+        },
+        "queueId": "20",
+        "routingRuleId": "25",
+        "racfId": null,
+        "serviceAgreementId": "41",
+        "deadlineDate": "12/20/2018",
+        "assigned": false,
+        "secRole": "GEN"
+      },
+      "referenceTaskName": "t5",
+      "retryCount": 0,
+      "seq": 6,
+      "pollCount": 1,
+      "taskDefName": "claims_workflow_awaiting_assignment_to_an_examiner_task_tstb",
+      "scheduledTime": 1561418803150,
+      "startTime": 1561418808028,
+      "endTime": 1561418816148,
+      "updateTime": 1561418808028,
+      "startDelayInSeconds": 0,
+      "retried": false,
+      "executed": true,
+      "callbackFromWorker": true,
+      "responseTimeoutSeconds": 3600,
+      "workflowInstanceId": "e6239187-0a13-45d4-9c9d-4f53baefaffa",
+      "workflowType": "claims_workflow_task_creation_workflow_tstb",
+      "taskId": "f4f86f6b-b95a-4af2-8862-3341310f92c2",
+      "callbackAfterSeconds": 0,
+      "workerId": "cwf-migration-router-tstb-36-vddjt",
+      "outputData": {
+        "claim": {
+          "claimNumber": "431016_UJ9H_29",
+          "taskNumber": "1262245317-2771",
+          "taskType": "HC",
+          "holdCode": "HPINV",
+          "lineOfBusiness": "MPP",
+          "groupNumber": "99997",
+          "providerNumber": "772",
+          "claimType": "I",
+          "hasAttachments": false,
+          "claimAge": 193,
+          "sequenceClaimId": 1262245317,
+          "claimReceivedDate": "12/12/2018",
+          "isEligibleForAutomation": false,
+          "claimServiceDate": "12/01/2018",
+          "claimThruDate": "12/01/2018",
+          "memberId": "H88979277",
+          "personNumber": "01",
+          "hasBeenReviewed": false,
+          "patientLastName": "MAHAFFEY",
+          "patientFirstName": "KENNETH",
+          "patientDateOfBirth": "01/03/1948",
+          "taskStatus": "Unassigned",
+          "holdCodeList": [
+            {
+              "reasonCode": "HPINV",
+              "lineNumber": 2,
+              "history": " ",
+              "contestedInd": "N"
+            }
+          ],
+          "hasHPINV": false,
+          "claimIndicator": "E",
+          "groupId": "9999713201",
+          "providerParStatus": "N"
+        },
+        "medical-records:request": {
+          "medicalRecordSearchHeader": {
+            "transactionId": "597275c8-d6b9-4a5e-b512-c51bacbe9408",
+            "clientId": "claims-workflow",
+            "tranDateTimeStamp": "06/24/2019 19:24:36",
+            "source": "AIS"
+          },
+          "contractNumber": "H88979277",
+          "providerId": "772",
+          "serviceFromDate": "09/01/2018",
+          "serviceToDate": "03/01/2019"
+        },
+        "medical-records:response": {
+          "medicalRecordSearchHeader": {
+            "transactionId": "597275c8-d6b9-4a5e-b512-c51bacbe9408",
+            "clientId": "claims-workflow",
+            "tranDateTimeStamp": "06/24/2019 19:24:36",
+            "source": "AIS",
+            "responseCode": "00",
+            "responseMessage": "Success"
+          },
+          "recordCount": 1,
+          "medicalRecordSearchResponseDetails": [
+            {
+              "aisRequestNumber": "51871307",
+              "aisRequestStatus": "RR",
+              "aisStatusDescription": "Response Received",
+              "serviceFromDate": "01/01/2019",
+              "serviceToDate": "01/01/2019",
+              "contractNumber": "H88979277",
+              "groupId": "99999",
+              "providerId": "772",
+              "solicited": "N",
+              "source": "EIP",
+              "patient": {},
+              "loincDetails": [
+                {
+                  "loincCode": "28650-0",
+                  "description": "CLINICAL NOTES AND CHART SECTIONS (SET)",
+                  "imageUrl": "http://eip-nav.bcbsfl.com/eip_app_v2/index.cfm?imagetype=CLAIM&IMAGE=598230972&Report=ImgDetails&fuseaction=Reports.EIPREPORT",
+                  "dateReceived": "01/18/2019",
+                  "imageId": "598230972"
+                }
+              ]
+            }
+          ]
+        },
+        "queueId": "20",
+        "routingRuleId": "25",
+        "racfId": null,
+        "serviceAgreementId": "41",
+        "deadlineDate": "12/20/2018",
+        "assigned": false,
+        "secRole": "GEN"
+      },
+      "workflowTask": {
+        "name": "claims_workflow_awaiting_assignment_to_an_examiner_task_tstb",
+        "taskReferenceName": "t5",
+        "inputParameters": {
+          "claim": "${t4.output.claim}",
+          "medical-records:request": "${t4.output.medical-records:request}",
+          "medical-records:response": "${t4.output.medical-records:response}",
+          "queueId": "${t4.output.queueId}",
+          "routingRuleId": "${t4.output.routingRuleId}",
+          "racfId": "${t4.output.racfId}",
+          "serviceAgreementId": "${t4.output.serviceAgreementId}",
+          "deadlineDate": "${t4.output.deadlineDate}",
+          "assigned": false,
+          "secRole": "${workflow.input.secRole}"
+        },
+        "type": "SIMPLE",
+        "startDelay": 0,
+        "optional": false,
+        "taskDefinition": {
+          "ownerApp": "svc-cwfclit",
+          "updateTime": 1560792730386,
+          "name": "claims_workflow_awaiting_assignment_to_an_examiner_task_tstb",
+          "description": "task responsible for cleaning up the inventory staging item",
+          "retryCount": 2,
+          "timeoutSeconds": 0,
+          "timeoutPolicy": "TIME_OUT_WF",
+          "retryLogic": "FIXED",
+          "retryDelaySeconds": 60,
+          "responseTimeoutSeconds": 3600,
+          "rateLimitPerFrequency": 0,
+          "rateLimitFrequencyInSeconds": 1
+        },
+        "asyncComplete": false
+      },
+      "rateLimitPerFrequency": 0,
+      "rateLimitFrequencyInSeconds": 0,
+      "taskDefinition": {
+        "present": true
+      },
+      "queueWaitTime": 4878,
+      "taskStatus": "COMPLETED"
+    },
+    {
+      "taskType": "WAIT",
+      "status": "IN_PROGRESS",
+      "inputData": {
+        "claim": {
+          "claimNumber": "431016_UJ9H_29",
+          "taskNumber": "1262245317-2771",
+          "taskType": "HC",
+          "holdCode": "HPINV",
+          "lineOfBusiness": "MPP",
+          "groupNumber": "99997",
+          "providerNumber": "772",
+          "claimType": "I",
+          "hasAttachments": false,
+          "claimAge": 193,
+          "sequenceClaimId": 1262245317,
+          "claimReceivedDate": "12/12/2018",
+          "isEligibleForAutomation": false,
+          "claimServiceDate": "12/01/2018",
+          "claimThruDate": "12/01/2018",
+          "memberId": "H88979277",
+          "personNumber": "01",
+          "hasBeenReviewed": false,
+          "patientLastName": "MAHAFFEY",
+          "patientFirstName": "KENNETH",
+          "patientDateOfBirth": "01/03/1948",
+          "taskStatus": "Unassigned",
+          "holdCodeList": [
+            {
+              "reasonCode": "HPINV",
+              "lineNumber": 2,
+              "history": " ",
+              "contestedInd": "N"
+            }
+          ],
+          "hasHPINV": false,
+          "claimIndicator": "E",
+          "groupId": "9999713201",
+          "providerParStatus": "N"
+        },
+        "medical-records:request": {
+          "medicalRecordSearchHeader": {
+            "transactionId": "597275c8-d6b9-4a5e-b512-c51bacbe9408",
+            "clientId": "claims-workflow",
+            "tranDateTimeStamp": "06/24/2019 19:24:36",
+            "source": "AIS"
+          },
+          "contractNumber": "H88979277",
+          "providerId": "772",
+          "serviceFromDate": "09/01/2018",
+          "serviceToDate": "03/01/2019"
+        },
+        "medical-records:response": {
+          "medicalRecordSearchHeader": {
+            "transactionId": "597275c8-d6b9-4a5e-b512-c51bacbe9408",
+            "clientId": "claims-workflow",
+            "tranDateTimeStamp": "06/24/2019 19:24:36",
+            "source": "AIS",
+            "responseCode": "00",
+            "responseMessage": "Success"
+          },
+          "recordCount": 1,
+          "medicalRecordSearchResponseDetails": [
+            {
+              "aisRequestNumber": "51871307",
+              "aisRequestStatus": "RR",
+              "aisStatusDescription": "Response Received",
+              "serviceFromDate": "01/01/2019",
+              "serviceToDate": "01/01/2019",
+              "contractNumber": "H88979277",
+              "groupId": "99999",
+              "providerId": "772",
+              "solicited": "N",
+              "source": "EIP",
+              "patient": {},
+              "loincDetails": [
+                {
+                  "loincCode": "28650-0",
+                  "description": "CLINICAL NOTES AND CHART SECTIONS (SET)",
+                  "imageUrl": "http://eip-nav.bcbsfl.com/eip_app_v2/index.cfm?imagetype=CLAIM&IMAGE=598230972&Report=ImgDetails&fuseaction=Reports.EIPREPORT",
+                  "dateReceived": "01/18/2019",
+                  "imageId": "598230972"
+                }
+              ]
+            }
+          ]
+        },
+        "queueId": "20",
+        "routingRuleId": "25",
+        "racfId": null,
+        "serviceAgreementId": "41",
+        "deadlineDate": "12/20/2018",
+        "assigned": false,
+        "secRole": "GEN"
+      },
+      "referenceTaskName": "t6",
+      "retryCount": 0,
+      "seq": 7,
+      "pollCount": 0,
+      "taskDefName": "claims_workflow_examiners_task_tstb",
+      "scheduledTime": 1561418836037,
+      "startTime": 1561418836044,
+      "endTime": 0,
+      "updateTime": 1561418836044,
+      "startDelayInSeconds": 0,
+      "retried": false,
+      "executed": false,
+      "callbackFromWorker": true,
+      "responseTimeoutSeconds": 0,
+      "workflowInstanceId": "e6239187-0a13-45d4-9c9d-4f53baefaffa",
+      "workflowType": "claims_workflow_task_creation_workflow_tstb",
+      "taskId": "f867415c-2ae3-40d9-a72a-59b3e876175f",
+      "callbackAfterSeconds": 0,
+      "workflowTask": {
+        "name": "claims_workflow_examiners_task_tstb",
+        "taskReferenceName": "t6",
+        "inputParameters": {
+          "claim": "${t5.output.claim}",
+          "medical-records:request": "${t5.output.medical-records:request}",
+          "medical-records:response": "${t5.output.medical-records:response}",
+          "queueId": "${t5.output.queueId}",
+          "routingRuleId": "${t5.output.routingRuleId}",
+          "racfId": "${t5.output.racfId}",
+          "serviceAgreementId": "${t5.output.serviceAgreementId}",
+          "deadlineDate": "${t5.output.deadlineDate}",
+          "assigned": "${t5.output.assigned}",
+          "secRole": "${workflow.input.secRole}"
+        },
+        "type": "WAIT",
+        "startDelay": 0,
+        "optional": false,
+        "asyncComplete": false
+      },
+      "rateLimitPerFrequency": 0,
+      "rateLimitFrequencyInSeconds": 0,
+      "taskDefinition": {
+        "present": false
+      },
+      "queueWaitTime": 7,
+      "taskStatus": "IN_PROGRESS"
+    }
+  ],
+  "input": {
+    "claim": {
+      "claimNumber": "431016_UJ9H_29",
+      "taskType": "HC",
+      "holdCode": "HPINV",
+      "lineOfBusiness": "MPP",
+      "groupNumber": "99997",
+      "providerNumber": "772",
+      "claimType": "I",
+      "hasAttachments": false,
+      "claimAge": 193,
+      "sequenceClaimId": 1262245317,
+      "claimReceivedDate": "12/12/2018",
+      "isEligibleForAutomation": false,
+      "claimServiceDate": "12/01/2018",
+      "claimThruDate": "12/01/2018",
+      "memberId": "H88979277",
+      "personNumber": "01",
+      "hasBeenReviewed": false,
+      "patientLastName": "MAHAFFEY",
+      "patientFirstName": "KENNETH",
+      "patientDateOfBirth": "01/03/1948",
+      "holdCodeList": [
+        {
+          "reasonCode": "HPINV",
+          "lineNumber": 2,
+          "history": " ",
+          "contestedInd": "N"
+        }
+      ],
+      "hasHPINV": false,
+      "claimIndicator": "E",
+      "groupId": "9999713201",
+      "providerParStatus": "N"
+    },
+    "secRole": "GEN"
+  },
+  "workflowType": "claims_workflow_task_creation_workflow_tstb",
+  "version": 1,
+  "schemaVersion": 2,
+  "workflowDefinition": {
+    "ownerApp": "dmd",
+    "createTime": 1561408215510,
+    "updateTime": 1555961156490,
+    "name": "claims_workflow_task_creation_workflow_tstb",
+    "description": "the workflow that creates a task based on claims rules",
+    "version": 1,
+    "tasks": [
+      {
+        "name": "claims_workflow_search_medical_records_task_tstb",
+        "taskReferenceName": "t1",
+        "inputParameters": {
+          "claim": "${workflow.input.claim}",
+          "secRole": "${workflow.input.secRole}"
+        },
+        "type": "SIMPLE",
+        "startDelay": 0,
+        "optional": false,
+        "taskDefinition": {
+          "ownerApp": "dmd",
+          "updateTime": 1560792664516,
+          "name": "claims_workflow_search_medical_records_task_tstb",
+          "description": "Search for medical records",
+          "retryCount": 1,
+          "timeoutSeconds": 0,
+          "timeoutPolicy": "TIME_OUT_WF",
+          "retryLogic": "FIXED",
+          "retryDelaySeconds": 60,
+          "responseTimeoutSeconds": 3600,
+          "rateLimitPerFrequency": 0,
+          "rateLimitFrequencyInSeconds": 1
+        },
+        "asyncComplete": false
+      },
+      {
+        "name": "claims_workflow_is_eligible_for_automation_decision_tstb",
+        "taskReferenceName": "d1",
+        "inputParameters": {
+          "claim": "${t1.output.claim}",
+          "medical-records:request": "${t1.output.medical-records:request}",
+          "medical-records:response": "${t1.output.medical-records:response}",
+          "isEligibleForAutomation": "${t1.output.claim.isEligibleForAutomation}",
+          "secRole": "${workflow.input.secRole}"
+        },
+        "type": "DECISION",
+        "caseValueParam": "isEligibleForAutomation",
+        "decisionCases": {
+          "false": [
+            {
+              "name": "claims_workflow_get_claim_queue_id_task_tstb",
+              "taskReferenceName": "t2",
+              "inputParameters": {
+                "claim": "${t1.output.claim}",
+                "medical-records:request": "${t1.output.medical-records:request}",
+                "medical-records:response": "${t1.output.medical-records:response}",
+                "secRole": "${workflow.input.secRole}"
+              },
+              "type": "SIMPLE",
+              "startDelay": 0,
+              "optional": false,
+              "taskDefinition": {
+                "ownerApp": "svc-cwfclit",
+                "updateTime": 1560792697682,
+                "name": "claims_workflow_get_claim_queue_id_task_tstb",
+                "description": "gets the queue id that the claim should belong to based on the sets of rules that the data is run against",
+                "retryCount": 2,
+                "timeoutSeconds": 0,
+                "timeoutPolicy": "TIME_OUT_WF",
+                "retryLogic": "FIXED",
+                "retryDelaySeconds": 30,
+                "responseTimeoutSeconds": 3600,
+                "rateLimitPerFrequency": 0,
+                "rateLimitFrequencyInSeconds": 1
+              },
+              "asyncComplete": false
+            },
+            {
+              "name": "claims_workflow_get_service_agreement_task_tstb",
+              "taskReferenceName": "t3",
+              "inputParameters": {
+                "claim": "${t2.output.claim}",
+                "medical-records:request": "${t2.output.medical-records:request}",
+                "medical-records:response": "${t2.output.medical-records:response}",
+                "queueId": "${t2.output.queueId}",
+                "routingRuleId": "${t2.output.routingRuleId}",
+                "racfId": "${t2.output.racfId}",
+                "secRole": "${workflow.input.secRole}"
+              },
+              "type": "SIMPLE",
+              "startDelay": 0,
+              "optional": false,
+              "taskDefinition": {
+                "ownerApp": "svc-cwfclit",
+                "updateTime": 1560792708486,
+                "name": "claims_workflow_get_service_agreement_task_tstb",
+                "description": "gets the service agreement id and days by executing set of rules and then calculate deadline date",
+                "retryCount": 2,
+                "timeoutSeconds": 0,
+                "timeoutPolicy": "TIME_OUT_WF",
+                "retryLogic": "FIXED",
+                "retryDelaySeconds": 30,
+                "responseTimeoutSeconds": 3600,
+                "rateLimitPerFrequency": 0,
+                "rateLimitFrequencyInSeconds": 1
+              },
+              "asyncComplete": false
+            },
+            {
+              "name": "claims_workflow_process_inventory_staging_item_task_tstb",
+              "taskReferenceName": "t4",
+              "inputParameters": {
+                "claim": "${t3.output.claim}",
+                "medical-records:request": "${t3.output.medical-records:request}",
+                "medical-records:response": "${t3.output.medical-records:response}",
+                "queueId": "${t3.output.queueId}",
+                "routingRuleId": "${t3.output.routingRuleId}",
+                "racfId": "${t3.output.racfId}",
+                "serviceAgreementId": "${t3.output.serviceAgreementId}",
+                "deadlineDate": "${t3.output.deadlineDate}",
+                "secRole": "${workflow.input.secRole}"
+              },
+              "type": "SIMPLE",
+              "startDelay": 0,
+              "optional": false,
+              "taskDefinition": {
+                "ownerApp": "svc-cwfclit",
+                "updateTime": 1560792718718,
+                "name": "claims_workflow_process_inventory_staging_item_task_tstb",
+                "description": "task responsible for cleaning up the inventory staging item",
+                "retryCount": 2,
+                "timeoutSeconds": 0,
+                "timeoutPolicy": "TIME_OUT_WF",
+                "retryLogic": "FIXED",
+                "retryDelaySeconds": 30,
+                "responseTimeoutSeconds": 3600,
+                "rateLimitPerFrequency": 0,
+                "rateLimitFrequencyInSeconds": 1
+              },
+              "asyncComplete": false
+            },
+            {
+              "name": "claims_workflow_awaiting_assignment_to_an_examiner_task_tstb",
+              "taskReferenceName": "t5",
+              "inputParameters": {
+                "claim": "${t4.output.claim}",
+                "medical-records:request": "${t4.output.medical-records:request}",
+                "medical-records:response": "${t4.output.medical-records:response}",
+                "queueId": "${t4.output.queueId}",
+                "routingRuleId": "${t4.output.routingRuleId}",
+                "racfId": "${t4.output.racfId}",
+                "serviceAgreementId": "${t4.output.serviceAgreementId}",
+                "deadlineDate": "${t4.output.deadlineDate}",
+                "assigned": false,
+                "secRole": "${workflow.input.secRole}"
+              },
+              "type": "SIMPLE",
+              "startDelay": 0,
+              "optional": false,
+              "taskDefinition": {
+                "ownerApp": "svc-cwfclit",
+                "updateTime": 1560792730386,
+                "name": "claims_workflow_awaiting_assignment_to_an_examiner_task_tstb",
+                "description": "task responsible for cleaning up the inventory staging item",
+                "retryCount": 2,
+                "timeoutSeconds": 0,
+                "timeoutPolicy": "TIME_OUT_WF",
+                "retryLogic": "FIXED",
+                "retryDelaySeconds": 60,
+                "responseTimeoutSeconds": 3600,
+                "rateLimitPerFrequency": 0,
+                "rateLimitFrequencyInSeconds": 1
+              },
+              "asyncComplete": false
+            },
+            {
+              "name": "claims_workflow_examiners_task_tstb",
+              "taskReferenceName": "t6",
+              "inputParameters": {
+                "claim": "${t5.output.claim}",
+                "medical-records:request": "${t5.output.medical-records:request}",
+                "medical-records:response": "${t5.output.medical-records:response}",
+                "queueId": "${t5.output.queueId}",
+                "routingRuleId": "${t5.output.routingRuleId}",
+                "racfId": "${t5.output.racfId}",
+                "serviceAgreementId": "${t5.output.serviceAgreementId}",
+                "deadlineDate": "${t5.output.deadlineDate}",
+                "assigned": "${t5.output.assigned}",
+                "secRole": "${workflow.input.secRole}"
+              },
+              "type": "WAIT",
+              "startDelay": 0,
+              "optional": false,
+              "asyncComplete": false
+            }
+          ],
+          "true": [
+            {
+              "name": "claims_workflow_deny_held_claim_tstb",
+              "taskReferenceName": "t7",
+              "inputParameters": {
+                "claim": "${t1.output.claim}",
+                "medical-records:request": "${t1.output.medical-records:request}",
+                "medical-records:response": "${t1.output.medical-records:response}",
+                "isEligibleForAutomation": "${t1.output.claim.isEligibleForAutomation}",
+                "secRole": "${workflow.input.secRole}"
+              },
+              "type": "SIMPLE",
+              "startDelay": 0,
+              "optional": false,
+              "taskDefinition": {
+                "ownerApp": "svc-cwfclit",
+                "updateTime": 1560793414356,
+                "name": "claims_workflow_deny_held_claim_tstb",
+                "description": "the task that denies a held claim for some reason.",
+                "retryCount": 2,
+                "timeoutSeconds": 0,
+                "timeoutPolicy": "TIME_OUT_WF",
+                "retryLogic": "FIXED",
+                "retryDelaySeconds": 3,
+                "responseTimeoutSeconds": 3600,
+                "rateLimitPerFrequency": 0,
+                "rateLimitFrequencyInSeconds": 1
+              },
+              "asyncComplete": false
+            },
+            {
+              "name": "claims_workflow_process_inventory_staging_item_task_tstb",
+              "taskReferenceName": "t8",
+              "inputParameters": {
+                "claim": "${t1.output.claim}",
+                "medical-records:request": "${t1.output.medical-records:request}",
+                "medical-records:response": "${t1.output.medical-records:response}",
+                "isEligibleForAutomation": "${t1.output.claim.isEligibleForAutomation}",
+                "secRole": "${workflow.input.secRole}"
+              },
+              "type": "SIMPLE",
+              "startDelay": 0,
+              "optional": false,
+              "taskDefinition": {
+                "ownerApp": "svc-cwfclit",
+                "updateTime": 1560792718718,
+                "name": "claims_workflow_process_inventory_staging_item_task_tstb",
+                "description": "task responsible for cleaning up the inventory staging item",
+                "retryCount": 2,
+                "timeoutSeconds": 0,
+                "timeoutPolicy": "TIME_OUT_WF",
+                "retryLogic": "FIXED",
+                "retryDelaySeconds": 30,
+                "responseTimeoutSeconds": 3600,
+                "rateLimitPerFrequency": 0,
+                "rateLimitFrequencyInSeconds": 1
+              },
+              "asyncComplete": false
+            },
+            {
+              "name": "claims_workflow_task_complete_event_tstb",
+              "taskReferenceName": "e1",
+              "inputParameters": {
+                "processed": true,
+                "claim": "${t1.output.claim}",
+                "secRole": "${workflow.input.secRole}"
+              },
+              "type": "EVENT",
+              "startDelay": 0,
+              "sink": "conductor",
+              "optional": false,
+              "asyncComplete": false
+            }
+          ]
+        },
+        "startDelay": 0,
+        "optional": false,
+        "asyncComplete": false
+      }
+    ],
+    "failureWorkflow": "claims_workflow_error_workflow_tstb",
+    "schemaVersion": 2,
+    "restartable": true,
+    "workflowStatusListenerEnabled": false
+  },
+  "startTime": 1561417978053,
+  "workflowName": "claims_workflow_task_creation_workflow_tstb",
+  "workflowVersion": 1
+}

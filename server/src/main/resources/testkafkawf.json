@@ -1,0 +1,28 @@
+{
+  "workflowType": "IMM_MMP_REDHAT_WF",
+  "version": 1,
+  "workflowId": "df99b19e-530d-4edb-ba46-5b5daea4cb02",
+  "startTime": "2019-10-30T02:18:14.772Z",
+  "updateTime": "2019-10-30T02:18:17.293Z",
+  "status": "COMPLETED",
+  "input": {
+    "eventId": 11630730,
+    "secRole": "GEN",
+    "trigger": {
+      "triggerId": "0003",
+      "memberId": "12500244635",
+      "triggerStatus": "NEW",
+      "lifecycleId": "12"
+    }
+  },
+  "output": {},
+  "executionTime": 0,
+  "failedReferenceTaskNames": "REDHAT_TASK",
+  "priority": 0,
+  "outputSize": 2,
+  "inputSize": 114,
+  "tags": {
+    "secRole": "GEN",
+    "memberId": "12500244635"
+  }
+}

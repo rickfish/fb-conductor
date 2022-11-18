@@ -1,0 +1,11 @@
+{
+  "order": 1,
+  "index_patterns": [
+    "conductor_unitc_task_*"
+  ],
+  "settings": {},
+  "mappings": {},
+  "aliases": {
+    "conductor_unitc_task": {}
+  }
+}

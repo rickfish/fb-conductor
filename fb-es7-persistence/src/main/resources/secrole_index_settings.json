@@ -1,0 +1,32 @@
+{
+	"secRoleIndexSettings": [
+		{
+			"secRole": "GEN",
+			"indexGranularity": "MONTHLY"
+		},
+		{
+			"secRole": "FEP",
+			"indexGranularity": "YEARLY"
+		},
+		{
+			"secRole": "SAO",
+			"indexGranularity": "YEARLY"
+		},
+		{
+			"secRole": "EMP",
+			"indexGranularity": "YEARLY"
+		},
+		{
+			"secRole": "BLU",
+			"indexGranularity": "YEARLY"
+		},
+		{
+			"secRole": "BCH",
+			"indexGranularity": "YEARLY"
+		},
+		{
+			"secRole": "SEN",
+			"indexGranularity": "YEARLY"
+		}
+	]
+}

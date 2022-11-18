@@ -1,0 +1,17 @@
+pluginManagement {
+    repositories {
+        maven {
+            url 'http://artifactory.bcbsfl.com/artifactory/libs-release'
+        }
+    }
+}
+
+rootProject.name='conductor-dev'
+
+include 'client','common','contribs','core', 'es7-persistence', 'fb-es7-persistence', 'jersey', 'zookeeper-lock', 'redis-lock'
+include 'cassandra-persistence','mysql-persistence',  'postgres-persistence', 'redis-persistence','server','test-harness','ui'
+include 'grpc', 'grpc-server', 'grpc-client'
+include 'jwt-security','fb-core','fb-common'
+
+rootProject.children.each {it.name="conductor-${it.name}"}
+

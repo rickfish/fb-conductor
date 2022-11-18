@@ -1,0 +1,11 @@
+{
+  "order": 1,
+  "index_patterns": [
+    "conductor_testa_task_*"
+  ],
+  "settings": {},
+  "mappings": {},
+  "aliases": {
+    "conductor_testa_task": {}
+  }
+}
