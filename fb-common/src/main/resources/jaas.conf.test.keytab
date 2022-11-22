@@ -1,8 +1,0 @@
-KafkaClient {
-    com.sun.security.auth.module.Krb5LoginModule required
-    useKeyTab=true
-    storeKey=true
-    serviceName="mqshdpu-kafka"
-    keyTab="/etc/keytabs/svc-sioetdt.keytab"
-    principal="svc-sioetdt@BCBSFL.COM";
-};
